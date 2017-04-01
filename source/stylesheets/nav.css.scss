@@ -1,0 +1,77 @@
+// Created by: Jenn Alarcon 3/30
+.nav-container  {
+  margin: 0;
+  padding: 0;
+  background-color: none;
+  
+}
+
+nav {
+ margin: 50px;
+ list-style-type: none;
+}
+
+nav a {
+	height: 25px;
+	float: left;
+	margin-right: 0px;
+	border-right: 1px solid #aaa;
+	padding: 0 20px;
+
+  text-decoration: none;
+  color: #ccc;
+  font: 25px sans-serif;
+  text-transform: uppercase;
+
+}
+
+nav a:last-child {
+  border-right: none;
+}
+
+nav a:hover {
+
+  font-weight: bold;
+  color: #333;
+}
+
+nav .dropdown {
+    position: absolute;
+    display: inline-block;
+    }
+
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    text-align: left;
+    min-width: 150px;
+    padding-top: 10px;
+
+    background-color: #f9f9f9;
+}
+
+nav .dropdown-content a {
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: block;
+     font-size: 12px;
+}
+
+.dropdown-content a:hover {
+	color: #1c498d;
+}
+
+.dropdown:hover .dropdown-content {
+
+	margin-top: 30px;
+	font-color:  #45708b;
+    display: block;
+
+
+ }
+
+ .dropdown-content a{
+ 	 border-right: none;
+ }
