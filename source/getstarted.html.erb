@@ -1,5 +1,24 @@
-
-getting started
 <div>
-  frik
+  <h2>Getting Started</h2>
+  <p>
+  	<h3>How to get jQuery:</h3>
+	There are two ways to add jQuery to your projects, downloading the library from http://jquery.com/download/ or including it in in your HTML from a CDN (Content Delivery Network).<br>
+	If you choose to download jQuery, then the HTML code you will include in your file will be:<br>
+	<div class="code">
+		&ltscript src=”jquery.min.js”&gt&lt/script&gt<br>
+	</div>
+	If you choose to use a jQuery CDN, then the HTML code you will include in your file will be:<br>
+	Google CDN:<br>
+	<div class="code">
+		&ltscript src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"&gt
+	</div>
+	Microsoft CDN:<br>
+	<div class="code">
+		&ltscript src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"&gt&lt/script&gt
+	</div>
+	<h3>Which is better?</h3>
+	It is preferred to use a CDN because if the client has already visited another page utilizing the same CDN, then it won’t need to be re-downloaded because it’s stored in the cache. The two CDNs mentioned above are preferred because these are the most utilized, meaning they have already been downloaded to most users browsers, resulting in faster load times.
+	<h3>Where to include the script tag?:</h3>
+	Similar to javascript, the location of the script tag does matter, as it not only determines how fast the page will load, but also the functionality of event handlers. For this reason, many developers either include script at the end of the BODY in their HTML document, or in the HEAD of their HTML document with their code wrapped in a document.ready handler. One of these two is necessary. If you include the script in the head without having your .js code wrapped in document.ready, then your event handlers won’t work because when they are assigned, the tags they are assigned to won’t exist in the DOM.
+  </p>
 </div>
