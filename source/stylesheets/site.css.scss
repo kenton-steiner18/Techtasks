@@ -4,15 +4,41 @@ html, body, div, span, p, a, img, ul, li{
   border:0;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
-  background-color: #fef6eb;
-}
-.container {
-	position: absolute;
-  margin-top: 80px;
-  margin-left: 90px;
-  font-family: sans-serif;
-  font-size: 20px;
-  background-color: transparent;
+  background-color: #efefef;
 
+
+}
+
+
+
+* .code{
+  font-family: "Andale Mono", AndaleMono, monospace !important;
+  background-color: rgba(194,235,239,0.76) !important;
+  text-align: center;
+
+}
+
+.code .comment{
+  background-color: inherit;
+  font-color: gray;
+}
+
+
+.container p {
+  font-family: 'Signika', sans-serif;
+
+}
+
+.container {
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 100px;
+
+  font-family: 'Signika', sans-serif !important;
+  font-weight: 300;
+  line-height: 55px;
+
+  background-color: transparent;
+  margin-right: 100px;
 
 }
