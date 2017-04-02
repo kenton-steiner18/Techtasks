@@ -9,12 +9,28 @@ html, body, div, span, p, a, img, ul, li{
 
 }
 
+h1,h2,h3,h4,p{
+  padding: 0px;
+}
+
+img.resize{
+    width:540px; /* you can use % */
+    height: auto;
+}
 
 
+div.example{
+  border:1px solid black;
+  margin: 10px;
+  text-align: center;
+  padding: 5px;
+}
 * .code{
   font-family: "Andale Mono", AndaleMono, monospace !important;
   background-color: rgba(194,235,239,0.76) !important;
-  text-align: center;
+  text-align: left !important;
+  padding:0px !important;
+  margin: 10px;
 
 }
 

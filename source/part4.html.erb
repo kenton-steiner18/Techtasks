@@ -1,11 +1,105 @@
 
 <div>
   <h2> Styling <h2>
+    <p>
+      <!-- Class Manipulation Section  -->
+      <h3> Class Manipulation  </h3>
+      <p> Being able to add a class allows for changes or updates to the styling of an HTML page much easier. Let's walk through an example. </p>
 
-    <h3> add/remove class </h3>
-    <div class = "code">
-      code add/remove here
-    </div>
+        <ul>
+          <li><Strong>addClass()</Strong>
+
+      <!-- Adding and Removing Class Example -->
+      <div class = "AddingClassExamples">
+        <p> Here's what the HTML will output BEFORE adding any classes: </p>
+        <div class = "example">
+          <h4>This is an example of how adding classes work</h4>
+          <p> Adding classes is fun! :-)</p>
+        </div>
+
+        <style type="text/css">
+        .page-header{
+          color: blue;
+          text-transform: uppercase;
+        }
+        .highlight{
+          background-color: orange;
+
+        }
+        </style>
+        <p> Here's is what an example styling can look like: </p>
+        <div class = "code"> <!-- OUTPUT Styling Code used in example-->
+
+          .page-header{<br>
+            &emsp; color: blue;<br>
+            &emsp; text-transform: uppercase;<br>
+          }<br>
+          .highlight{<br>
+            &emsp; background-color: orange;<br>
+            &emsp; width: 200px;<br>
+          }<br>
+
+        </div> <!-- END Styling Code in example -->
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+          $("h4.example").addClass("page-header");
+          $("p.example").addClass("highlight");
+        });
+        </script>
+
+        <p> The addClass() method in action: </p>
+        <!-- OUTPUT jQuery Code used in example-->
+        <div class = "code" text-align: left !important;>
+          $("h4").addClass("page-header"); <br>
+          $("p.jQueryFun").addClass("highlight");<br>
+        </div><!-- End OUTPUT jQuery Code used in example-->
+        <p> AFTER adding designated classes: </p>
+        <div class = "example">
+          <h1 class = "example">This is an example of how adding classes work</h1>
+          <p class="example"> Adding classes is fun! :-)</p>
+        </div>
+
+
+      </div> </li>
+      <!--End of Examples -->
+
+      Other methods to manipulate classes include:
+
+        <li> <Strong>toggleClass():</Strong> This method "swaps" classes. Let's look at the following example:
+
+        <div class = "code">
+          $('.toggle').toggleClass('red green');
+        </div>
+        This  will change all the elements that have class ="toggle red" to class = "toggle green", and vice versa. Here is what the output looks before using toggle:
+        <style>
+        .red{ color:red; }
+        .green{ color:green; }
+
+
+        </style>
+        <div class = "example">
+          <p class="toggle green">Apples</p>
+          <p class="toggle green">Strawberries</p>
+          <p class="toggle green">Red</p>
+          <p class="toggle red">Grass</p>
+          <p class="toggle red">Money</p>
+          <p class="toggle red">Green</p>
+        </div>
+
+        Here is what the output looks like after:
+        <div class = "example">
+          <p class="toggle red">Apples</p>
+          <p class="toggle red">Strawberries</p>
+          <p class="toggle red">Red</p>
+          <p class="toggle green">Grass</p>
+          <p class="toggle green">Money</p>
+          <p class="toggle green">Green</p>
+        </div>
+      </ul>
+    </p>  </li>
+    <!-- End of class manipulation  -->
+
 
     <h3> Basic Effects </h3>
     <p>
@@ -28,65 +122,67 @@
 
       <h3> Think outside the box </h3>
       <p>
-      <p> Animate</p>
-      <div class = "code">
-        code here
-      </div>
+        <p> Animate</p>
+        <div class = "code">
+          code here
+        </div>
 
-      <p> Delay</p>
-      <div class = "code">
-        code  here
-      </div>
+        <p> Delay</p>
+        <div class = "code">
+          code  here
+        </div>
 
-      <p> Finish</p>
-      <div class = "code">
-        code here
-      </div>
-      <p> Stop</p>
-      <div class = "code">
-        code here
-      </div>
-    </p>
+        <p> Finish</p>
+        <div class = "code">
+          code here
+        </div>
+        <p> Stop</p>
+        <div class = "code">
+          code here
+        </div>
+      </p>
 
       <h3> Fading</h3>
-    <p>
+      <p>
 
-      <p> fadeIn</p>
-      <div class = "code">
-        code here
-      </div>
+        <p> fadeIn</p>
+        <div class = "code">
+          code here
+        </div>
 
-      <p> fadeOut</p>
-      <div class = "code">
-        code here
-      </div>
+        <p> fadeOut</p>
+        <div class = "code">
+          code here
+        </div>
 
-      <p> fadeTo</p>
-      <div class = "code">
-        code here
-      </div>
-      <p> fadeToggle</p>
-      <div class = "code">
-        code here
-      </div>
-    </p>
+        <p> fadeTo</p>
+        <div class = "code">
+          code here
+        </div>
+        <p> fadeToggle</p>
+        <div class = "code">
+          code here
+        </div>
+      </p>
 
       <h3> Sliding</h3>
       <p>
-      <p> slide Down</p>
-      <div class = "code">
-        code here
-      </div>
+        <p> slide Down</p>
+        <div class = "code">
+          code here
+        </div>
 
-      <p> slide toggle</p>
-      <div class = "code">
-        code here
-      </div>
+        <p> slide toggle</p>
+        <div class = "code">
+          code here
+        </div>
 
-      <p> slide up</p>
-      <div class = "code">
-        code here
-      </div>
-    </p>
+        <p> slide up</p>
+        <div class = "code">
+          code here
+        </div>
+      </p>
+      <p> Resources: (on this page temp, will make resources html page) </p>
+
 
     </div>
