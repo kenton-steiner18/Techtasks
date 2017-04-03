@@ -1,5 +1,97 @@
-
-part 5
 <div>
-  frik
-</div>
+	<h2>jQuery and AJAX<br>
+	<span class="author">Authored by Kenton Steiner</span></h2>
+	<p>
+		<h3>AJAX: An Introduction</h3>
+		AJAX is defined as the process of exchanging data with a server and updating a web page without reloading the whole thing.  The acronym itself stands for Asynchronous JavaScript and XML, and is used in many different web applications today, such as Facebook and Gmail.  It allows HTTP send and receive messages to be transmitted between the client and a remote server to load external data into the current webpage without a full refresh.   Because AJAX calls are asynchronous, the response for the function calls is not instantly available.  Thus, callback functions must be passed in function calls requesting data, so that it will run once the request has succeeded, which will be discussed further when dealing with the specific functions.   
+	</p>
+	<p>
+		<h3>How does jQuery work with AJAX?</h3>
+		While AJAX fully functions without jQuery (for more information about AJAX, visit <%= link_to 'AJAX tutorial', 'https://www.w3schools.com/xml/ajax_intro.asp' %>), jQuery makes AJAX implementation much simpler and more universal.  Different browsers implement different AJAX syntax, so it requires a lot of extra code to account for all of the differences from browser to browser, but jQuery methods for AJAX functionality take care of the syntax differences between browsers by using just a single line of code. 
+	</p> 
+
+	<h2>jQuery's AJAX Methods</h2>
+	<p>
+	There are two different types of ways in which jQuery offers AJAX methods.  For more the more in depth user, who wants to take full advantages of all the functionality offered, the core
+	<span class="code">$.ajax()</span> method is offered, and then there are also more convenient, terse functions that will provide the same results as the aforementioned <span class="code">$.ajax()</span> method, but with fewer options and features.  To begin, we will discuss the <span class="code">$.ajax()</span> method.
+	</p>
+
+	<h3>The Heart of It All</h3>
+	<p>
+		As mentioned above, the <span class="code">$.ajax()</span> method is the core method of how jQuery implements AJAX functionality.  This method takes a parameter of an object of all the specifications that jQuery requires to complete requests.  Because the method takes an object, it allows for single point of control if the object is defined separately from the method call.  This method also allows for many more options to be defined within the configuration object that the convenience functions do not allow you to set.  Below is an example of a <span class="code">$.ajax()</span> function call with some of the configuration options.  For a full list of options along with their documentation, visit <%= link_to('http://api.jquery.com/jQuery.ajax/')%>.
+	<strong>Code</strong>
+	<div class="code">
+		$.ajax({<br>
+			url: "post.php", <span id='comment'>//URL for the request message</span> <br>
+			data: {id: 100}, <span id='comment'>//Data to be sent in request</span><br>
+			type: "GET",<span id='comment'>//Whether this is a POST or GET request </span><br>
+			dataType: "json",<span id='comment'>//Type of data expected to be returned</span><br>
+		})<br><span id='comment'>//Code to run if request succeeds</span><br>
+		.done(function(json) {<br>
+     		$("&lth1&gt").text(json.title).appendTo("body");<br>
+     		$("&ltdiv class=\"content\"&gt").html(json.html).appendTo("body");<br>
+ 		})
+	</div>
+	<em><strong>Note</strong></em>: To set global default settings for the <span class="code">$.ajax()</span>  method to avoid setting the same configuration setting in each function call, call the method. <span class="code">$.ajaxSetup()</span><br>
+	The example above shows how an inline declaration of the ajax method looks, when an object is not declared separately.  It is requesting data from the url "post.php", with the data "id: 100" which will be converted to a query string (id=100)and appended to the url, due to the type of the requestion, a "GET" request.  It also is expecting to receive a json (Javascript Object Notation) object as a result of the request.  See below for these and other common configuration options to set in the object passed to the <span class="code">$.ajax()</span> function.<br>
+	<h3>Common Configuration Options</h3>
+	<strong>done:</strong> Callback function that receives response data, text status of the request, and raw request object. Only runs if request succeeds.<br>
+	<strong>fail:</strong> Callback function which receives the text status of the request and raw request object.  Only runs if the request fails.<br>
+	<strong>always:</strong> Callback function that receives the text status of the request and raw request object.  Runs regardless of success or failure once the request completes.<br>
+	<strong>data:</strong> The data that is sent to the server.  It can be either a String, PlainObject, or an Array.  If not a string, it is converted to a query string and appended to the url for "GET" requests.  If an object, it must be in key/value pairs.<br>
+	<strong>dataType:</strong> The type of data expected to be sent back from the server as a result of the request.  jQuery will look at the MIME type of the response if no dataType is set.  Text, html, xml, json, jsonp, and script are the available dataTypes.<br>
+	<em>Note:</em>: If 'dataType' is provided, the Content-Type header of the response message will be disregarded.<br>
+	<strong>type:</strong> Sets the type of the request method, either "POST" or "GET", with the default as "GET".  Some browsers will also allow for the use of "PUT" and "DELETE".<br>
+	<strong>url:</strong> This is the only required property of the configuration object passed to the <span id='code'>$.ajax()</span>.  It can be passed as the first argument to the function itself.<br>
+	</p>
+	<h2>For Your Convenience</h2>
+	<p>
+	The second way to use AJAX functionality through jQuery is with the convenience <span class='code'>$.get()</span> and <span class='code'>$.post()</span> functions.  
+	</p>
+	<h3>get</h3>
+	<p>
+	<div class='code'>
+		$.get(<em>URL,callback</em>);
+	</div>
+	The first convenience function we will discuss is the <span class='code'>$.get()</span> function, which sends a request for data from the server with an HTTP GET request.  This function only has two parameters.  URL specifies where you are requesting the information from, and callback is the callback function which runs if the request succeeds. Only the URL parameter is required. <br>
+	<h3>Example</h3>
+	<div class='code'>
+		$.get("all_this_data.html", function(data,status){
+			<span id='comment'>//Callback function definition here</span><br>
+		})
+	</div>
+	In the example get request above, the URL we are requesting is "all_this_data.html".  The second paratmeter is the callback function, with two parameters of it's own.  The first is the data returned by the server, the content of the webpage, and the second is the status of the request.
+	</p>
+	<h3>post</h3>
+	<p>
+	<div class='code'>
+		$.post(<em>URL,data,callback</em>);
+	</div>
+	The second convenience function is the <span class='code'>$.post()</span> function, which requests data from the server using an HTTP POST request.  This function has three parameters, URL, data, and callback.  URL is the only required parameter of the three, and like GET, it specifies the URL you are requesting data from.  Data is an optional parameter which allows you to send some data with the request, and callback is an optional parameter that is a function to be executed if the request succeeds.<br>
+	<h3>Example</h3>
+	<div class='code'>
+		$.post("all_this_data.html",<br>
+		{
+			name: "Fred"
+			greeting: "Hello World!"
+		},<br>
+		function(data,status){
+			<span id='comment'>//Callback function definition here</span><br>
+		})
+	</div>
+	In the example post request above, we are requesting from the same URL as the example GET, "all_this_data.html".  However, we are also sending two key/value pairs along with the request, name="Fred" and greeting="Hello World!", which will be used by the URL.  Then we also have passed a callback function, which is the same as the function passed in the GET request above.  
+	</p>
+	<h3>Pick Your Poison</h3>
+	<p>
+	Since we have now discussed some of the ins and outs of the two different methods of using AJAX functionality with jQuery, it is important to distinguish when you should use each method.  Though they both return the same results either way, they both have specific advantages.  The convenience methods should be used when sending simple requests to the server, when not needing to change any of the default settings already provided by the jQuery implementation.  The <span class='code'>$.ajax()</span> function, on the other hand, should be used when extensive configuration setting needs to be performed or when you want to perform error handling, as the convenience functions don't allow for either of these things.  The <span class='code'>$.ajax()</span> function allows you pass callback functions for cases of failed/successful requests, or functions that run no matter what the result is.  This function also allows you more single point of control over code, to define a configuration object that can be used in multiple request messages.
+	</p>
+	<h2>Conclusion</h2>
+	<p>
+		This is the end of jQuery and AJAX.  The main things to remember is jQuery makes using AJAX much simpler by implementing the AJAX functionality using one line statements.  This is done in two ways.  You can either use the <span class='code'>$.ajax()</span> function, or the convenience <span class='code'>$.get()</span> and <span class='code'>$.post()</span> functions, depending on what level of specification and configuration you want to use.  For simpler requests, the convenience functions are the way to go, but for more detailed requests, the <span class='code'>$.ajax()</span> function is the way to go.  To look further into the full range of options involved with the <span class='code'>$.ajax()</span> function, it is recommended to check out the <%= link_to('API','http://api.jquery.com/jQuery.ajax/') %>.
+	</p>
+	<h3>Depths of Writing</h3>
+	<p>
+	I wrote in all 6 levels of Bloom's taxonomy.  I showed knowledge by defining the three different functions jQuery uses to implement AJAX functionality.  I showed comprehension by explaining the different parts of these functions and what the functions do as a whole.  I showed application by providing examples of each of the three functions.  These examples showed analysis and synthesis as I explained what each role each piece of code played in the overall final product and in conjunction with the examples, I also provided the general format for each function and talked about how to integrate them into code writing.  Lastly, I evaluated when to use each of the two different methods by assessing their strengths and weaknesses.  
+	</p>
+	</div>
+
