@@ -7,7 +7,7 @@
 
   <p>
 		<h3>$ Rules Everything Around Me:</h3>
-		The $ sign is the arguably one of the most iconic parts of jQuery. $(&ltselector&gt) is how you select HTML elements based on their CSS selectors, meaning you can pass it not only an HTML tag, but also a class, an id, and pseudo-classes (however, not pseudo-elements since they are not apart of the DOM). This allows you to greatly simplify maneuvering the DOM.
+		The $ sign is the arguably one of the most iconic parts of jQuery. <span class='code'>$(&ltselector&gt)</span>is how you select HTML elements based on their CSS selectors, meaning you can pass it not only an HTML tag, but also a class, an id, and pseudo-classes (however, not pseudo-elements since they are not apart of the DOM). This allows you to greatly simplify maneuvering the DOM.
 	</p>
 
 	<p>
@@ -26,7 +26,7 @@
 			$(“.highlight”);<br>
 			$(“#footer”);<br>
 		</div>
-		Note: jQuery uses double quotes, according to the <%= link_to 'jQuery Core Style Guide.', "http://contribute.jquery.org/style-guide/js/#quotes" %>However, single quotes do work.
+		<em>Note:</em> jQuery uses double quotes, according to the <%= link_to 'jQuery Core Style Guide', "http://contribute.jquery.org/style-guide/js/#quotes" %>. However, single quotes do work.
 	</p>
 	<p>
 		We would like to emphasize that $ uses CSS selectors. This means you can also pass it CSS selectors with ancestors, pseudo-classes, and pathing selectors. Lets look at the following tree and try to select different elements.
@@ -35,23 +35,23 @@
 		<img src="images/ex_tree.png" alt="Tree Example"/><br>
 		<strong>Code:</strong>
 		<div class="code">
-			$(“div .university”); <span class = "comment">// => the span node under the div in class university</span><br>
+			$(“div .university”); <span id = "comment">// => the span node under the div in class university</span><br>
 
-			$(“.university”); <span class = "comment">// => A collection of all nodes in class university</span><br>
+			$(“.university”); <span id = "comment">// => A collection of all nodes in class university</span><br>
 
-			$(“body h2”); <span class = "comment">// => <em>ALL</em> H2 nodes under BODY</span><br>
+			$(“body h2”); <span id = "comment">// => <em>ALL</em> H2 nodes under BODY</span><br>
 
-			$(“body > h2”); <span class = "comment">// => the H2 that is a direct child of BODY</span><br>
+			$(“body > h2”); <span id = "comment">// => the H2 that is a direct child of BODY</span><br>
 
-			$(“p.draft:nth-child(2)”); <span class = "comment">// => the IMG node which is the second child of the P tag in the class draft</span><br>
+			$(“p.draft:nth-child(2)”); <span id = "comment">// => the IMG node which is the second child of the P tag in the class draft</span><br>
 
-			$(“div h2,p”); <span class = "comment">// => Collection of the H2 node and the P node under the div</span><br>
+			$(“div h2,p”); <span id = "comment">// => Collection of the H2 node and the P node under the div</span><br>
 		</div>
 	</p>
 	<p>
-	Let’s discuss some of the intricate lines in this example. $(“body h2”) will return all the h2 nodes under the body tag, including those that are not direct children. Now this may be what you want; however, typically you just want the direct children. In this case, this selector may select too much. That’s where you can use $(“body > h2”), which does what you expect, selects the h2 tags that are direct children of the body tag.
-	$(“p.draft:nth-child(2)”) select the second child of every p tag in class draft. This is an example of how easy it can be to use pseudo-classes with jQuery. However, we’re not done with this example, we’ll come back to it when we discuss how to optimize performance.
-	$(“div h2,p”) selects all the h2 nodes or p nodes under a div tag. <br>
+	Let’s discuss some of the intricate lines in this example. <span class='code'>$(“body h2”)</span> will return all the h2 nodes under the body tag, including those that are not direct children. Now this may be what you want; however, typically you just want the direct children. In this case, this selector may select too much. That’s where you can use<span class='code'>$(“body > h2”)</span>, which does what you expect, selects the h2 tags that are direct children of the body tag.
+	<span class='code'>$(“p.draft:nth-child(2)”)</span>select the second child of every p tag in class "draft". This is an example of how easy it can be to use pseudo-classes with jQuery which we will revisit when we discuss how to optimize performance.
+	<span class='code'>$(“div h2,p”)</span>selects all the h2 nodes or p nodes under a div tag. <br>
 	</p>
 	<p>
 		<h3>Using jQuery methods vs. CSS selectors</h3>
@@ -59,13 +59,13 @@
 		<strong>Code:</strong>
 		<div class="code">
 			$(“div”).find(“.university”);<br>
-			$(“.university”); <span class = "comment">// This wouldn’t change because there is only one tag</span><br>
-			$(“body”).find(“h2”); <span class = "comment"> // Recall that this gets all children</span><br>
-			$(“body”).children(“h2”); <span class = "comment">// This will get only DIRECT children</span><br>
+			$(“.university”); <span id = "comment">// This wouldn’t change because there is only one tag</span><br>
+			$(“body”).find(“h2”); <span id = "comment"> // Recall that this gets all children</span><br>
+			$(“body”).children(“h2”); <span id = "comment">// This will get only DIRECT children</span><br>
 			$(“p.draft”).nth-child(2);<br>
 			$(“div”).find(“h2, p”);<br>
 		</div>
-		This is the exact same code, however utilizes jQuery methods where possible. Most of the pseudo-classes in CSS are implemented as methods as well. Notice the use of the method .find(&ltselector&gt). This <em>finds</em> all the selectors that are children of a specific node. Also, notice how if you want only the direct children, you use .children(&ltselector&gt). Finally, observe the final line of code, $(“div”).find(“h2, p”). This example is, arguably, easier to read that $(“div h2,p”) since it reads exactly as it does. For all div tags, find its’ children that are h2 tags or p tags. So you have two choices in how to maneuver the DOM, one utilizing CSS selectors and another utilizing jQuery methods; however, which is better?
+		This code return the exact same results as the previous, while utilizing jQuery methods where possible. Most of the pseudo-classes in CSS are implemented as methods in jQuery as well. Notice the use of the method<span class='code'>.find(&ltselector&gt)</span>. This <em>finds</em> all the selectors that are children of a specific node. Also, notice how if you want only the direct children, you use<span class='code'>.children(&ltselector&gt)</span>. Finally, observe the final line of code, <span class='code'>$(“div”).find(“h2, p”)</span>. This example is, arguably, easier to read than<span class='code'>$(“div h2,p”)</span>, since it reads exactly as it is written. For all div tags, find the children that are h2 or p tags. So you have two choices for maneuvering the DOM, one utilizing CSS selectors and another utilizing jQuery methods. Which is better?
 	</p>
 	<p>
 		<h3>Optimization</h3>
@@ -74,30 +74,30 @@
   </p>
   <p>
   	<h3>Walking the DOM</h3>
-		“Walking the DOM” is essentially using the methods .next([&ltselector&gt]) and .prev([&ltselector&gt]) to “walk” the DOM. .next() does multiple things depending on whether the optional parameter is given or not. If .next() is called on a node without a given parameter, then it will return the next sibling. If a selector is given, then it will retrieve the next sibling that matches that selector. .prev() only differs in the fact that it returns the previous sibling.
+		“Walking the DOM” is essentially using the methods<span class='code'>.next([&ltselector&gt])</span>and<span class='code'>.prev([&ltselector&gt])</span>to navigate siblings of elements in the DOM.<span class='code'>.next()</span>does multiple things depending on whether the optional parameter is given or not. If<span class='code'>.next()</span>is called on a node without a given parameter, then it will return the next sibling. If a selector is given, then it will retrieve the next sibling that matches that selector.<span class='code'>.prev()</span>only differs in the fact that it returns the previous sibling.
 	</p>
 	<p>
 		<h3>Traversing up the DOM</h3>
-		“Traversing up the DOM” is moving through the HTML tree vertically, looking at each ancestor (or child) until you find what you’re looking for. We already discussed a few Tree Traversal methods, .find() and .children(). However these look down the tree. If we wish to search up the tree, then we can use these two common methods, .parent([&ltselector&gt]) and .closest().<br>
-		.parent() does what you expect, it returns the parent of the current node. It also optionally filters by a selector.<br>
-		.closest(&ltselector&gt) traverses up through all the ancestors of a node until it finds the specified selector. This is commonly used with event listeners that utilize event delegation, which you will learn about later.<br>
+		“Traversing up the DOM” is moving through the HTML tree vertically, looking at each ancestor (or child) until you find the desired result. We already discussed a few Tree Traversal methods,<span class='code'>.find()</span>and<span class='code'>.children()</span> . Both of the these methods are used to traverse down the tree to the children of elements. If we wish to search up the tree, then we can use the methods<span class='code'>.parent([&ltselector&gt])</span>and<span class='code'>.closest()</span>.<br>
+		<span class='code'>.parent()</span>does what you expect, returning the parent of the current node. It also optionally filters by a selector.<br>
+		<span class='code'>.closest(&ltselector&gt)</span>traverses up through all the ancestors of a node until it finds the specified selector. This is commonly used with event listeners that utilize event delegation, which will be discussed later.<br>
 
 		Here are a few examples of Traversing the DOM and Walking the DOM.
 		<img src="images/ex_tree.png" alt="Tree Example"/><br>
 		<strong>Code:</strong>
 		<div class="code">
-			$(“img”).parent(); <span class = "comment">// => P node that is in the draft class</span><br>
+			$(“img”).parent(); <span id = "comment">// => P node that is in the draft class</span><br>
 
-			$(“img”).closest(“div”); <span class = "comment"> // => DIV node that is in the warning class</span><br>
+			$(“img”).closest(“div”); <span id= "comment"> // => DIV node that is in the warning class</span><br>
 
-			$(“img”).prev(); <span class = "comment">// => A node that is the previous sibling of the IMG node</span><br>
-			$(“div”).next().prev(); <span class = "comment">// => Same DIV node that we started with</span><br>
+			$(“img”).prev(); <span id = "comment">// => A node that is the previous sibling of the IMG node</span><br>
+			$(“div”).next().prev(); <span id = "comment">// => Same DIV node that we started with</span><br>
 		</div>
 	</p>
 	<p>
 		<h3>Conclusion</h3>
-		This is the end of the Maneuvering the DOM section. One key takeaways is how $(&ltselector&gt) takes CSS selectors and that longer CSS selectors be rewritten with jQuery methods, which is negligibly faster. The other key takeaway is how to navigate the HTML tree horizontally (.next() and .prev()) as well as how to navigate the tree vertically (.parent() and .closest()). There are many other methods when it comes to Walking/Traversing the DOM, so it’s always recommended to look up methods in the <%= link_to('API', "https://api.jquery.com/">API.</a>
-	</p>
+		This is the end of the Maneuvering the DOM section. One key takeaways is how<span class='code'>$(&ltselector&gt)</span>takes CSS selectors and that longer CSS selectors be rewritten with jQuery methods, which is negligibly faster. The other key takeaway is how to navigate the HTML tree horizontally with<span class='code'>.next()</span>and<span class='code'>.prev()</span>, and vertically with<span class='code'>.parent()</span>and<span class='code'>.closest()</span>. There are many other methods when it comes to Walking/Traversing the DOM, so it’s always recommended to look up methods in the <%= link_to('API', "https://api.jquery.com/") %>.
+		</p>
 
 	<p>
 		<h3>Depth of Writing</h3>
