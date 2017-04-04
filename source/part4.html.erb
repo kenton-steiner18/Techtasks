@@ -3,203 +3,452 @@
   <h2> Styling <h2>
     <p>
       <!-- Class Manipulation Section  -->
-      <h3> Class Manipulation  </h3>
+      <h3 class = "mainTopic"> Class Manipulation  </h3>
       <p> Being able to add a class allows for changes or updates to the styling of an HTML page much easier. Let's walk through an example. </p>
 
-        <ul>
-          <li><Strong>addClass()</Strong>
+      <ul>
+        <li><Strong>addClass()</Strong>
 
-      <!-- Adding and Removing Class Example -->
-      <div class = "AddingClassExamples">
-        <p> Here's what the HTML will output BEFORE adding any classes: </p>
-        <div class = "example">
-          <h4>This is an example of how adding classes work</h4>
-          <p> Adding classes is fun! :-)</p>
+          <!-- Adding and Removing Class Example -->
+          <div class = "AddingClassExamples">
+            <p> Here's what the HTML will output BEFORE adding any classes: </p>
+            <div class = "example">
+              <h4>This is an example of how adding classes work</h4>
+              <p> Adding classes is fun! :-)</p>
+            </div>
+
+            <p> Here's is what an example styling can look like: </p>
+            <div class = "code"> <!-- OUTPUT Styling Code used in example-->
+
+              .page-header{<br>
+                &emsp; color: blue;<br>
+                &emsp; text-transform: uppercase;<br>
+              }<br>
+              .highlight{<br>
+                &emsp; background-color: orange;<br>
+                &emsp; width: 200px;<br>
+              }<br>
+
+            </div>
+            <!-- END Styling Code in example -->
+
+
+
+            <p> The addClass() method in action: </p>
+            <!-- OUTPUT jQuery Code used in example-->
+            <div class = "code">
+              $("h4").addClass("page-header"); <br>
+              $("p.jQueryFun").addClass("highlight");<br>
+            </div><!-- End OUTPUT jQuery Code used in example-->
+            <p> AFTER adding designated classes: </p>
+
+            <div class = "example">
+
+              <!-- styling for example  -->
+              <style type="text/css">
+              .page-header{
+                color: blue;
+                text-transform: uppercase;
+              }
+              .highlight{
+                background-color: orange;
+
+              }
+              </style>
+              <!-- jQuery for Example  -->
+              <script type="text/javascript">
+              $(document).ready(function(){
+                $("h4.example").addClass("page-header");
+                $("p.example").addClass("highlight");
+              });
+              </script>
+              <!-- html for example -->
+              <h1 class = "example">This is an example of how adding classes work</h1>
+              <p class="example"> Adding classes is fun! :-)</p>
+            </div>
+
+          </div> </li>
+          <!--End of Examples -->
+
+
+          <!-- toggleClass() -->
+          <li> <Strong>toggleClass():</Strong> This method "swaps" classes. Let's look at the following example:
+
+
+            This  will change all the elements that have class ="toggle red" to class = "toggle green", and vice versa. Here is what the output looks before using toggle:
+
+            <!-- styling for example  -->
+            <style>
+            .red{ color:red; }
+            .green{ color:green; }
+            </style>
+
+            <div class = "example">
+              <p class="toggle green">Apples</p>
+              <p class="toggle green">Strawberries</p>
+              <p class="toggle green">Red</p>
+              <p class="toggle red">Grass</p>
+              <p class="toggle red">Money</p>
+              <p class="toggle red">Green</p>
+            </div>
+
+            <div class = "code">
+              $('.toggle').toggleClass('red green');
+            </div>
+
+            Here is what the output looks like after:
+            <div class = "example">
+              <p class="toggle red">Apples</p>
+              <p class="toggle red">Strawberries</p>
+              <p class="toggle red">Red</p>
+              <p class="toggle green">Grass</p>
+              <p class="toggle green">Money</p>
+              <p class="toggle green">Green</p>
+            </div>
+
+          </p> </li>
+          <!-- end of toggleClass() -->
+
+          <!-- removeClass() -->
+          <li><Strong>removeClass()</Strong>
+            Removing a class allows a programmer to remove styling of an element, assoicated with a specified class. Here is the method in action:
+            <div class = "code">
+              $('.toggle').removeClass('red'); </br>
+              $('.toggle').removeClass('green');
+            </div>
+            Here is what the output will look like after removing the classes:
+            <div class = "example">
+              <p class="toggle">Apples</p>
+              <p class="toggle">Strawberries</p>
+              <p class="toggle">Red</p>
+              <p class="toggle">Grass</p>
+              <p class="toggle">Money</p>
+              <p class="toggle">Green</p>
+            </div>
+          </li> <!-- end of removeClass() -->
+         </ul>  <!-- End of class manipulation  -->
+
+       <hr>
+         <!-- basic effects -->
+          <h3 class = "mainTopic"> Basic Effects </h3>
+          <p>
+            <!-- Hide and Seek Example -->
+            <p> <Strong> Hide & Seek </Strong> </br> jQuery provides two methods  that allow for elements to be hidden and then redisplayed. The .hide() method hides the designated element, and the .show()  method displays the element that was hidden. If image was never "hidden" then .show() will have no effect. The the following example the methods will be applied to an image: </p>
+
+            <div class = "code">
+              $(".hide").click(function(){ </br>
+                &emsp;  $("img.hideAndSeek").hide(); </br>
+              }); </br>
+              $(".show").click(function(){</br>
+                &emsp;  $("img.hideAndSeek").show();</br>
+              }); </br>
+            </div>
+
+            <div class = "example">
+              <script>
+              $(document).ready(function(){
+
+                $(".hide").click(function(){
+                  $("img.hideAndSeek").hide();
+                });
+                $(".show").click(function(){
+                  $("img.hideAndSeek").show();
+                });
+              });
+              </script>
+              <img class = "hideAndSeek" alt = "TOAD" width = "200" src = "images/part4/toad.png"/> </br>
+              <button class="hide">Hide</button>
+              <button class="show">Seek </button>
+            </div>
+          </p>
+          <!-- End of basic effects  -->
+
+
+ <hr>
+        <h3 class = "mainTopic"> Fading</h3>
+        <ul>
+          <li> fadeOut(): will gradually make an element disappear. </li>
+          <li> fadeIn(): will gradually bring the element back in.</li>
+          <li> fadeToggle(): will "fade" in the element if it has been "faded" out, or is not yet displayed, and will vice versa for fading out.</li>
+        </ul>
+
+        <p> The buttons that say "hi" use the  fadeIn() method in the following way: </p>
+        <div class = "code">
+
+          $("button.marioFadeIn").click(function(){</br>
+            &emsp;$("img.mario").fadeIn();</br>
+          });</br></br>
+
+          $("button.toadFadeIn").click(function(){</br>
+            &emsp;$("img.toad").fadeIn();</br>
+          });</br></br>
+
+          $("button.marioFadeIn").click(function(){</br>
+            &emsp;  $("img.mario").fadeIn();</br>
+          });</br></br>
+        </div>
+        <div class = "code">
         </div>
 
-        <style type="text/css">
-        .page-header{
-          color: blue;
-          text-transform: uppercase;
-        }
-        .highlight{
-          background-color: orange;
+        <p> The buttons that say "Bye" use the  fadeIn() method in the following way:  </p>
+        <div class = "code">
 
-        }
-        </style>
-        <p> Here's is what an example styling can look like: </p>
-        <div class = "code"> <!-- OUTPUT Styling Code used in example-->
+          $("button.marioFadeOut").click(function(){</br>
+            &emsp;$("img.mario").fadeOut();</br>
+          });</br>
 
-          .page-header{<br>
-            &emsp; color: blue;<br>
-            &emsp; text-transform: uppercase;<br>
-          }<br>
-          .highlight{<br>
-            &emsp; background-color: orange;<br>
-            &emsp; width: 200px;<br>
-          }<br>
+          $("button.toadFadeOut").click(function(){</br>
+            &emsp;$("img.toad").fadeOut();</br>
+          });</br>
 
-        </div> <!-- END Styling Code in example -->
+          $("button.marioFadeOut").click(function(){</br>
+            &emsp;  $("img.mario").fadeOut();</br>
+          });</br>
+        </div>
+        <div class = "code">
+        </div>
 
+
+        <p>
+          <!-- Fade out example -->
+          <div class = "example">
+            <button class = "luigiFadeIn">Hi Luigi</button>
+            <button class = "toadFadeIn">Hi Toad</button>
+            <button class = "marioFadeIn">Hi Mario</button></br>
+            <script type="text/javascript">
+            $(document).ready(function(){
+              //fade out
+              $("button.marioFadeOut").click(function(){
+                $("img.mario").fadeOut();
+              });
+
+              $("button.toadFadeOut").click(function(){
+                $("img.toad").fadeOut();
+
+
+              });
+
+              $("button.luigiFadeOut").click(function(){
+                $("img.luigi").fadeOut();
+              });
+
+              // fade in
+              $("button.marioFadeIn").click(function(){
+                $("img.mario").fadeIn();
+              });
+
+              $("button.toadFadeIn").click(function(){
+                $("img.toad").fadeIn();
+              });
+
+              $("button.luigiFadeIn").click(function(){
+                $("img.luigi").fadeIn();
+              });
+
+
+
+            });
+            </script>
+
+            <img class = "luigi" src="/images/part4/luigi.png" height= "200" alt="luigi">
+            <img class = "toad" src="/images/part4/toad.png" height= "200" alt="toad">
+            <img class = "mario" src="/images/part4/mario.png" height= "200" alt="mario"></br>
+
+            <button class = "luigiFadeOut">Bye Luigi</button>
+            <button class = "toadFadeOut">Bye Toad</button>
+            <button class = "marioFadeOut">Bye Mario</button>
+          </br>
+
+        </br>
+      </div>
+      <!-- end of fade out example -->
+
+
+      <!-- Fade toggle example -->
+      <p> If we want to bring back an element, it might seem like there would be a better way to fade elements in and out easier, and there is! Fade toggle, allows elements that have been "faded" in to now be "faded" out, and vice versa. Let's see how the fadeToggle is used in the following code: </p>
+      <div class = "code">
+        $("button.mario").click(function(){</br>
+          &emsp;  $("img.mario").fadeToggle();</br>
+        });</br><br>
+
+        $("button.toad").click(function(){</br>
+          &emsp;$("img.toad").fadeToggle();</br>
+
+        });</br></br>
+
+        $("button.luigi").click(function(){</br>
+          &emsp; $("img.luigi").fadeToggle();</br>
+        });</br>
+      </div>
+      <p>Let's see our code in action. We implemented the exact same fading in and fading out style as above, but have greatly simplified the coding aspect. Instead of 6 seperated functions, we just need three. Check it out! </p>
+
+      <div class = "example">
         <script type="text/javascript">
         $(document).ready(function(){
-          $("h4.example").addClass("page-header");
-          $("p.example").addClass("highlight");
+          $("button.marioFadeToggle").click(function(){
+            $("img.marioFadeToggle").fadeToggle();
+          });
+
+          $("button.toadFadeToggle").click(function(){
+            $("img.toadFadeToggle").fadeToggle();
+
+          });
+
+          $("button.luigiFadeToggle").click(function(){
+            $("img.luigiFadeToggle").fadeToggle();
+          });
+
+
         });
         </script>
 
-        <p> The addClass() method in action: </p>
-        <!-- OUTPUT jQuery Code used in example-->
-        <div class = "code" text-align: left !important;>
-          $("h4").addClass("page-header"); <br>
-          $("p.jQueryFun").addClass("highlight");<br>
-        </div><!-- End OUTPUT jQuery Code used in example-->
-        <p> AFTER adding designated classes: </p>
-        <div class = "example">
-          <h1 class = "example">This is an example of how adding classes work</h1>
-          <p class="example"> Adding classes is fun! :-)</p>
-        </div>
+        <img class = "luigiFadeToggle" src="/images/part4/luigi.png" height= "200" alt="luigi">
+        <img class = "toadFadeToggle" src="/images/part4/toad.png" height= "200" alt="toad">
+        <img class = "marioFadeToggle" src="/images/part4/mario.png" height= "200" alt="mario">
 
-
-      </div> </li>
-      <!--End of Examples -->
-
-      Other methods to manipulate classes include:
-
-        <li> <Strong>toggleClass():</Strong> This method "swaps" classes. Let's look at the following example:
-
-        <div class = "code">
-          $('.toggle').toggleClass('red green');
-        </div>
-        This  will change all the elements that have class ="toggle red" to class = "toggle green", and vice versa. Here is what the output looks before using toggle:
-        <style>
-        .red{ color:red; }
-        .green{ color:green; }
-
-
-        </style>
-        <div class = "example">
-          <p class="toggle green">Apples</p>
-          <p class="toggle green">Strawberries</p>
-          <p class="toggle green">Red</p>
-          <p class="toggle red">Grass</p>
-          <p class="toggle red">Money</p>
-          <p class="toggle red">Green</p>
-        </div>
-
-        Here is what the output looks like after:
-        <div class = "example">
-          <p class="toggle red">Apples</p>
-          <p class="toggle red">Strawberries</p>
-          <p class="toggle red">Red</p>
-          <p class="toggle green">Grass</p>
-          <p class="toggle green">Money</p>
-          <p class="toggle green">Green</p>
-        </div>
-      </ul>
-    </p>  </li>
-
-    <li><Strong>removeClass()</Strong>
-      Removing a class allows a programmer to remove styling of an element, assoicated with a specified class. Here is the method in action:
-      <div class = "code">
-        $('.toggle').removeClass('red'); </br>
-        $('.toggle').removeClass('green');
-      </div>
-      Here is what the output will look like after removing the classes:
-      <div class = "example">
-        <p class="toggle">Apples</p>
-        <p class="toggle">Strawberries</p>
-        <p class="toggle">Red</p>
-        <p class="toggle">Grass</p>
-        <p class="toggle">Money</p>
-        <p class="toggle">Green</p>
-      </div>
-    </li>
-    <!-- End of class manipulation  -->
-
-
-    <h3> Basic Effects </h3>
-    <p>
-      <p> Hide </p>
-      <p> ....about... </p>
-      <div class = "code">
-        example code for slide here
-      </div>
-
-      <p> Show </p>
-      <div class = "code">
-        code fade here
-      </div>
-
-      <p> Toggle <p>
-        <div class = "code">
-          code for toggle here
-        </div>
-      </p>
-
-      <h3> Think outside the box </h3>
-      <p>
-        <p> Animate</p>
-        <div class = "code">
-          code here
-        </div>
-
-        <p> Delay</p>
-        <div class = "code">
-          code  here
-        </div>
-
-        <p> Finish</p>
-        <div class = "code">
-          code here
-        </div>
-        <p> Stop</p>
-        <div class = "code">
-          code here
-        </div>
-      </p>
-
-      <h3> Fading</h3>
-      <p>
-
-        <p> fadeIn</p>
-        <div class = "code">
-          code here
-        </div>
-
-        <p> fadeOut</p>
-        <div class = "code">
-          code here
-        </div>
-
-        <p> fadeTo</p>
-        <div class = "code">
-          code here
-        </div>
-        <p> fadeToggle</p>
-        <div class = "code">
-          code here
-        </div>
-      </p>
-
-      <h3> Sliding</h3>
-      <p>
-        <p> slide Down</p>
-        <div class = "code">
-          code here
-        </div>
-
-        <p> slide toggle</p>
-        <div class = "code">
-          code here
-        </div>
-
-        <p> slide up</p>
-        <div class = "code">
-          code here
-        </div>
-      </p>
-      <p> Resources: (on this page temp, will make resources html page) </p>
-
-
+      </br>
+      <button class = "luigiFadeToggle">Luigi</button>
+      <button class = "toadFadeToggle">Toad</button>
+      <button class = "marioFadeToggle">Mario</button>
     </div>
+  </p>  <!--END Fade toggle example -->
+
+
+
+
+ <hr>
+  <!-- Sliding -->
+  <h3 class = "mainTopic"> Sliding</h3>
+
+  <p>Sliding works the exact same ways as the fade methods do, but instead of fading in and out, we can hide the item by sliding up and down. Now we already saw that we can use slide up and down, or we can just use slide toggle if we want to implement both. The only difference in the code from fadeToggle, is replacing it with slideToggle. If we do this, this is what it would like:  </p>
+  <p>
+
+    <!-- Sliding Example -->
+      <div class = "example">
+        <script type="text/javascript">
+        $(document).ready(function(){
+          $("button.luigiSlide").click(function(){
+            $("img.luigiSlide").slideToggle();
+          });
+
+          $("button.toadSlide").click(function(){
+            $("img.toadSlide").slideToggle();
+
+          });
+
+          $("button.marioSlide").click(function(){
+            $("img.marioSlide").slideToggle();
+          });
+        });
+        </script>
+
+        <img class = "luigiSlide" src="/images/part4/luigi.png" height= "200" alt="luigi">
+        <img class = "toadSlide" src="/images/part4/toad.png" height= "200" alt="toad">
+        <img class = "marioSlide" src="/images/part4/mario.png" height= "200" alt="mario">
+
+      </br>
+      <button class = "luigiSlide">Luigi</button>
+      <button class = "toadSlide">Toad</button>
+      <button class = "marioSlide">Mario</button>
+    </div>  <!-- Sliding Example -->
+
+  </p>  <!-- END of Sliding Topic -->
+
+ <hr>
+  <!-- Even cooler methods -->
+  <h3 class = "mainTopic"> Think outside the box </h3>
+  <p>
+
+    <p> Animate </p>
+  </p> The syntax for animate() <br>
+  <div class = "code"> $(selector).animate({params},speed,callback); </div>
+
+  <p>The only required parameters in the animate method is the params parameter. You can designate and apply any css to a designated element.The speed paramater is in miliseconds, or can take "slow" and "fast" as alternative parameters. If this paramater is left out, it will automically be set to 400 miliseconds.The callback paramater will take a function that will be executed to the DOM element that had been selected for animation. If this parameter is left blank, then no callback function will be executed.</p>
+
+  <p> First, it is important to note that not all CSS styling effects can be applied. The animation method only works on CSS properties that return a numeric property, such as font size. For example, using background-color cannot be used.
+  </p>
+
+  <p> You can also pass other styling effects that we have seen thus far such as toggle, show and hide. We'll see some examples with this later on.</p>
+
+
+  Here's a couple examples that will help you understand animate:
+  <div class = "code">
+
+    $("button.<Strong>animate</Strong>").click(function(){ </br>
+      &emsp; $("img.toad").animate({height: "500px"});<span class="comment">  // Here the default speed is set to 400 miliseconds </span></br>
+    });</br></br>
+
+    $("button.<Strong>reset</Strong>").click(function(){</br>
+      &emsp; $("img.toad").animate({height: "200px"}); <span class="comment">  // Here the default speed is set to 400 miliseconds </span></br>
+    });</br></br>
+
+    $("button.<Strong>slowToad</Strong>").click(function(){</br>
+      &emsp;$("img.toad").animate({height: "500px"},1500);<span class="comment">  // Here the speed is set to 1500 miliseconds</span></br>
+    });</br></br>
+
+    $("button.<Strong>reallySlowToad</Strong>").click(function(){</br>
+      &emsp;$("img.toad").animate({height: "500px"},8000);<span class="comment">  // Here the speed is set to 8000 miliseconds</span></br>
+    });</br>
+  </div>
+
+  <!-- Example for animate -->
+  <div class = "example">
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $("button.animate").click(function(){
+        $("img.toadAnimate").animate({height: "500px"});
+      });
+
+      $("button.reset").click(function(){
+        $("img.toadAnimate").animate({height: "200px"});
+      });
+
+      $("button.slowToad").click(function(){
+        $("img.toadAnimate").animate({height: "500px"},1500);
+      });
+      $("button.reallySlowToad").click(function(){
+        $("img.toadAnimate").animate({height: "500px"},8000);
+      });
+    });
+    </script>
+    <img class = "toadAnimate" src="/images/part4/toad.png" height= "200" alt="toad"></br>
+    <button class = "animate">Animate</button>
+    <button class = "reset"> Reset </button>
+    <button class = "slowToad"> Slow Toad </button>
+    <button class = "reallySlowToad"> Really Slow Toad </button>
+
+  </div>
+  <!-- end of example for animate  -->
+
+  <!-- Delay -->
+  <p> Delay</p>
+  The default timing for effects is 400ms. Delay allows the time of execution to be changed.
+
+  <div class = "code">
+    $(selector).delay(speed,queueName)
+  </div>
+
+
+  <!-- Finish -->
+  <p> Finish</p>
+  <p>The finish, sometimes confused with the stop method, will stop executing the designated effects, and just show the final state. Let's see how Finish works: </p>
+  <div class = "code">
+    code here
+  </div>
+
+
+  <!-- Stop -->
+  <p> Stop</p>
+  <div class = "code">
+    code here
+  </div>
+</p>  <!--END of Even cooler methods -->
+
+
+
+
+
+  <p> Resources: (on this page temp, will make resources html page) </p>
+
+
+</div>

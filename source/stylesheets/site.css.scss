@@ -1,15 +1,22 @@
-html, body, div, span, p, a, img, ul, li{
+html, body, div, span, p, a, ul, li{
   margin:0;
   padding:0;
   border:0;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+  font-family: 'Signika',sans-serif,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   background-color: #efefef;
 
 
 }
 
-h1,h2,h3,h4,p{
+hr{
+margin-top: 50px;
+
+
+}
+
+h1,h2,h3,h4{
   padding: 0px;
 }
 
@@ -18,6 +25,10 @@ img.resize{
     height: auto;
 }
 
+ul{
+  list-style:none;
+  margin-left: 25px;
+}
 
 div.example{
   border:1px solid black;
@@ -35,13 +46,14 @@ div.example{
 }
 
 .code .comment{
-  background-color: inherit;
+  background-color: light-gray;
   font-color: gray;
 }
 
 
 .container p {
-  font-family: 'Signika', sans-serif;
+
+  padding: 5px;
 
 }
 
