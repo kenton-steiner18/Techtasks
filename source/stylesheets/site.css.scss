@@ -25,6 +25,11 @@ img.resize{
     height: auto;
 }
 
+.required{
+  color:red;
+  font-weight: 600;
+}
+
 ul{
   list-style:none;
   margin-left: 25px;
@@ -42,6 +47,7 @@ div.example{
   text-align: left !important;
   padding:0px !important;
   margin: 10px;
+
 
 }
 
