@@ -1,30 +1,31 @@
 <div>
 
 <h2>
-	Events in the DOM <br />
-  	<span class="author">Author by Raphael Huang</span>
+Events in the DOM<br>
+<span class='author'>Authored by Raphael Huang</span>
+
 </h2>
 
 <p>
-<h3> Sysntax For Event Methods</h3>
+<h3> Syntax For Event Methods</h3>
 
-	Using the $ sign to find a node in tree, jQuery offers 	many methods for register an Event Handler. The typical methods are .click() method and .on("click") method. Here is a compare between the pure javascript Event Method and jQuery Method. And, the compare between the click() Method and on() Method.
+	Using the $ sign to find a node in tree, jQuery offers many methods for registering an Event Handler. Here is a comparison between the pure Javascript and jQuery creating an Event Listener for "click".
 	<br />
-	<strong class="thick"> javascript: </strong>
+	<strong class="thick"> Javascript: </strong>
 	<div class="code">
-		document.getElementByclick("p").addEventListener("click", function, flase);
+		document.getElementByclick("p").addEventListener("click", function, false);
 	</div>
 
 	<strong class="thick"> jQuery: </strong>
 	<div class="code">
-		<span class="gray"> // Event setup using click method </span> <br />
+		<span class="comment"> // Event setup using click method </span> <br />
 
 		$("p").click(function() {
 		// do something
 		});
 		<br />
 
-		<span class="gray"> // Event setup using on method, which can attch mutiple event handlers </span> <br />
+		<span class="comment"> // Event setup using on method, which can attach mutiple event handlers </span> <br />
 
 		$("p").on("click", function() {
 		// do something
@@ -33,50 +34,52 @@
 </p>
 
 <p>
-<h3> Commonly jQuery Event Methods </h3>
+<h3> Common jQuery Event Methods </h3>
 	<h4> click() vs dblclick() </h4>
-	The click() and dblclick() method can register an event handler to HTML. For the click(), the user should click the HTML element to execute function; For the dblclick() method, the user should double click on the HTML element. <strong class="thick"> Here is an example: </strong>
+	The click() and dblclick() method can register an event handler to HTML. For click(), the user should click the HTML element once to execute function; For dblclick(), the user should double click on the HTML element. <br><strong class="thick"> Here is an example: </strong>
 	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/2fmtfz88/4/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 	<br />
 
 	<h4> mouseenter() vs mouseleave() </h4>
-	The mouseenter() and mouseleave() method also can attach an event handler to HTML. For the mouseenter() method, if the mouse pointer enters the HTML element, then the function is executed. However, for the mouseleave(), if the mouse pointer leaves the HTML element, then the function is excuted. <strong class="thick"> Here is an example: </strong>
+	The mouseenter() and mouseleave() methods also can attach an event handler to HTML elements. For the mouseenter() method, if the mouse pointer enters the HTML element, then the function is executed. However, for mouseleave(), if the mouse pointer leaves the HTML element, then the function is executed.<br> <strong class="thick"> Here is an example: </strong>
 	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/awnw0kwe/1/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 	<br />
 
 	<h4> mousedown() vs mouseup() </h4>
-	The mousedown() and mouseup() method register an event handler to HTML. For the mousedown() method, if the mouse button(left, middle, right button both work) is pressed down, then the function is excuted. For the mouseup() method, if the mouse button is released, then the function is excuted. <strong class="thick"> Here is an example: </strong>
+	The mousedown() and mouseup() methods register an event handler to HTML. For the mousedown() method, if the mouse button (left, middle, right button both work) is pressed down, then the function is executed. For the mouseup() method, if the mouse button is released, then the function is executed.<br> <strong class="thick"> Here is an example: </strong>
 	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/pr1zrszd/2/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 	<br />
 
 	<h4> hover() </h4>
-	So how to combine the moseenter() and moseleave() methods together in one HTML element? The hover() method can help users to do that. <strong class="thick"> Here is an example: </strong>
+	To combine the mouseenter() and mouseleave() methods together in one HTML element, use the hover() method. <strong class="thick"> Here is an example: </strong>
 	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/L50byj9t/3/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 	<br />
 
 	<h4> focus() vs blur() </h4>
-	The focus() and blur() method attach the event handler to HTML. For the focus() method, if the form is focus, then the fuction is excuted. For the blur() method, if the form losses focus, then the function is excuted. <strong class="thick"> Here is an example: </strong>
+	The focus() and blur() methods attach event handlers to HTML elements. For the focus() method, if the form is currently the focused element, then the function is executed. For the blur() method, if the form loses focus, then the function is executed. <br><strong class="thick"> Here is an example: </strong>
 	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/mrj5hj14/1/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 </p>
 
 <p> 
 <h3> Event Propagation </h3>
-	We have learned what is event bubbling in the class. The event bubbling means bubbles up the DOM trees from the tag that is clicked. Here are two methods can stop the action. One of them can stop the event from bubbling up the DOM tree.
+	Event propogation is essentially event bubbling, which we have covered in class. As a reminder though, event bubbling is when event actions bubble up the DOM tree from the element that triggered the event handler. Here are two methods dealing with event propogation.<br>
 	<strong class="thick"> preventDefault() </strong>
-	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/dnyuLh5f/4/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/dnyuLh5f/4/embedded/js,html,result/dark" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-	The preventDefault just stop the default action. In this example, the link does not work, but the div still work.
-	<br />
+	preventDefault() just stops the default action. In this example, the link does not work, but the div still works.
+	<br>
 
 	<strong class="thick"> stopPropagation() </strong>
  	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/p6e59c7r/3/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-	The stopPropagation() method will stop the event bubbling. In this example, if there is no stopPropagation() method, after the users click the inner, it will show, "inner" first, and then "outer", finally is "outerouter".
+	The stopPropagation() method will stop event bubbling. In this example, if there is no stopPropagation() method, after the users click the inner, it will show "inner" first, then "outer", and finally "outerouter".
 </p>
 
 <p>
 <h3> Event Delegation </h3>
-	The bubbling behavior of events allows users to do Event Delegation. The event delegation can attach an event listener to a parent element,. <br />
+
+	The bubbling behavior of events allows users to do Event delegation. Event delegation can attach a event listener to a parent element. <br />
+
 	Here is a simple example:
 	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/0sm8vg1z/3/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
@@ -87,12 +90,12 @@
 
 	In the Console, it will count how many times the user has clicked. However, if we add one element to parent element. What will happen?
 	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/6voLus3t/2/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-	Now we <strong class="thick">add</strong> one element to list. The result is that we click the Six, nothing will happened. In the Console, it will not count the new element. The reason is that the event handler was registered when called the on() method. The new element did not exist at that time. Hence, the new element does not register an event handler.
+	Now we <strong class="thick">add</strong> one element to list. The result is that when we click the Six, nothing will happen. In the Console, it will not count the new element. The reason is that the event handler was registered when calling the on() method. The new element did not exist at that time. Hence, the new element does not register an event handler.
 </p>
 	
 <p>
 	<h3>Conclusion</h3>
-	This is the end of the Events in the DOM section. In this section, we introduce a lot of methods to register the event handler. The Commonly jQuery Event Methods help users to execute function easier. We also mention the event delegation and event bubbling. If you want to stop the event bubbling, you can use stopPropagation() method. Moreover, if you want to stop the default action, the users can use preventDefault() method. We also can use jQuery to add event lstener to a parent element, is that very cool? There are more Event methods in the <%= link_to('More information about Event', "https://learn.jquery.com/events/") %>.
+	This is the end of the Events in the DOM section. In this section, we introduced a lot of methods to register the event handler. The Common jQuery Event Methods help users to execute functions easier. We also mention the event delegation and event bubbling. If you want to stop event bubbling, you can use stopPropagation() method. Moreover, if you want to stop the default action, the users can use the preventDefault() method. We also can use jQuery to add event listeners to a parent element! For further inquiry into the Event methods, visit <%= link_to('More information about Events', "https://learn.jquery.com/events/") %>.
 </p>
 
 <p>

@@ -49,9 +49,9 @@
 		</div>
 	</p>
 	<p>
-	Let’s discuss some of the intricate lines in this example. <span class='code'>$(“body h2”)</span> will return all the H2 nodes under the BODY tag, including those that are not direct children. Now this may be what you want; however, typically you just want the direct children. In this case, this selector may select too much. That’s where you can use<span class='code'>$(“body > h2”)</span>, which does what you expect, selects the H2 tags that are direct children of the BODY tag.
-	<span class='code'>$(“p.draft:nth-child(2)”)</span>select the second child of every p tag in class "draft".
-	<span class='code'>$(“div h2,p”)</span>selects all the H2 nodes or P nodes under a DIV tag. This will also be mentioned later in this part. This is an example of how easy it can be to use pseudo-classes with jQuery; however, this is not the only way to write them.<br>
+	Let’s discuss some of the intricate lines in this example. <span class='code'>$(“body h2”)</span> will return all the H2 nodes under the BODY tag, including those that are not direct children. Now this may be what you want; however, typically you just want the direct children. In this case, this selector may select too much. That’s where you can use<span class='code'>$(“body > h2”)</span>, which does what you expect, selecting the H2 tags that are direct children of the BODY tag.
+	<span class='code'>$(“p.draft:nth-child(2)”)</span>selects the second child of every p tag in class "draft".
+	<span class='code'>$(“div h2,p”)</span>selects all the H2 nodes or P nodes under a DIV tag. This shows how easy it can be to use pseudo-classes with jQuery; however, this is not the only way to write them.<br>
 	</p>
 	<p>
 		<h3>Using jQuery methods vs. CSS selectors</h3>
@@ -69,7 +69,7 @@
 	</p>
 	<p>
 		<h3>Optimization</h3>
-		It is typically most optimal to use the jQuery methods as much as possible vs. the CSS selectors. However, according to
+		It is typically optimal to use the jQuery methods as much as possible vs. the CSS selectors. However, according to
 		<%= link_to "jQuery.com", "https://learn.jquery.com/performance/optimize-selectors/”"%>, this has become “less important than it used to be, as more browsers implement document.querySelectorAll() and the burden of selection shifts from jQuery to the browser.”
   </p>
   <p>
