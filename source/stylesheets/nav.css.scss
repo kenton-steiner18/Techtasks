@@ -1,6 +1,5 @@
 // Created by: Jenn Alarcon 3/30
 .nav-container  {
-  margin: 0;
   padding: 0;
   margin: auto;
   width: 50%;
@@ -10,6 +9,9 @@
 
 }
 
+.nav-container div {
+  border: 2px black;
+}
 nav {
   margin: 50px;
 }
