@@ -1,7 +1,8 @@
 <div>
 
 <h2>
-Events in the DOM
+	Events in the DOM <br />
+  	<span class="author">Author by Raphael Huang</span>
 </h2>
 
 <p>
@@ -75,7 +76,7 @@ Events in the DOM
 
 <p>
 <h3> Event Delegation </h3>
-	The bubbling behavior of events allows users to do Event Delegation. The event delegation can attach a event listener to a parent element,. <br />
+	The bubbling behavior of events allows users to do Event Delegation. The event delegation can attach an event listener to a parent element,. <br />
 	Here is a simple example:
 	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/0sm8vg1z/3/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
@@ -89,6 +90,15 @@ Events in the DOM
 	Now we <strong class="thick">add</strong> one element to list. The result is that we click the Six, nothing will happened. In the Console, it will not count the new element. The reason is that the event handler was registered when called the on() method. The new element did not exist at that time. Hence, the new element does not register an event handler.
 </p>
 	
+<p>
+	<h3>Conclusion</h3>
+	This is the end of the Events in the DOM section. In this section, we introduce a lot of methods to register the event handler. The Commonly jQuery Event Methods help users to execute function easier. We also mention the event delegation and event bubbling. If you want to stop the event bubbling, you can use stopPropagation() method. Moreover, if you want to stop the default action, the users can use preventDefault() method. We also can use jQuery to add event lstener to a parent element, is that very cool? There are more Event methods in the <%= link_to('More information about Event', "https://learn.jquery.com/events/") %>.
+</p>
+
+<p>
+	<h3>Depth of Writing</h3>
+	I wrote in all 6 levels of Bloom's taxonomy. I showed knowledge by defining the syntax, definition and methods. I showed comprehension by describing what the method works. I showed application by creating some examples by jsfiddle. After the exampes, there are some descriptions about the reason why we can get that results. I showed synthesis since I created these examples to show how these methods work. And then, I showed evaluation because I met some problems when I created the examples, and I fixed these problems.
+</p>
 
 
 
