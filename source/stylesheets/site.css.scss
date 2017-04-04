@@ -45,7 +45,7 @@ div.example{
   text-align: center;
   padding: 5px;
 }
-* .code{
+.code{
   font-family: "Andale Mono", AndaleMono, monospace !important;
   background-color: rgba(194,235,239,0.76) !important;
   text-align: left !important;
@@ -60,6 +60,9 @@ div.example{
   font-color: gray;
 }
 
+.author{
+  font-style: italic;
+}
 
 .container p {
 
