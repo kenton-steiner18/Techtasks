@@ -35,6 +35,10 @@ ul{
   margin-left: 25px;
 }
 
+ul.withBullets{
+  list-style: circle;
+}
+
 div.example{
   border:1px solid black;
   margin: 10px;
@@ -77,5 +81,16 @@ div.example{
 
   background-color: transparent;
   margin-right: 100px;
+
+}
+
+.thick {
+	font-weight: bold;
+}
+
+.gray {
+	background-color: inherit;
+	color: gray;
+	font-style: italic;
 
 }
