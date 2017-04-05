@@ -13,6 +13,10 @@
   * Linked to in part1
 * https://learn.jquery.com/performance/optimize-selectors/
   * Linked to in part1
+* https://learn.jquery.com/events
+  * Linked to in part3
+* https://www.w3schools.com/jquery/jquery_ref_events.asp
+  * Linked to in part3
 * https://www.w3schools.com/jquery/jquery_ajax_get_post.asp
   * Linked to in part5
 * http://api.jquery.com/jQuery.ajax/
