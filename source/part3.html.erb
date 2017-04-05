@@ -90,10 +90,30 @@ Events in the DOM<br>
 
 	In the Console, it will count how many times the user has clicked. However, if we add one element to parent element. What will happen?
 	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/6voLus3t/2/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-	Now we <strong class="thick">add</strong> one element to list. The result is that when we click the Six, nothing will happen. In the Console, it will not count the new element. The reason is that the event handler was registered when calling the on() method. The new element did not exist at that time. Hence, the new element does not register an event handler.
-</p>
+	Now we <strong class="thick">add</strong> one element to list. The result is that when we click the Six, nothing will happen. In the Console, it will not count the new element. The reason is that the event handler was registered when calling the on() method. The new element did not exist at that time. Hence, the new element does not register an event handler. <br />
+	Sometimes, users might meet this problem: if there is two elements have the same id, how to locate the inner one? Here is the direct method like this:
+	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/at5qgync/3/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+	We can see the direct method can not locate the inner one. How to sovle this problem? The Event Delegation can help us to fix this problem. <br />
+	The Event Delegation also can attach the event handler for the specified elements inside the parents element. Before the jQuery version 3.0., Users used the delegate() method, now use the on() method instead. Here is the delegated method.
+	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/w1b9f6g7/4/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 	
+</p>
+
 <p>
+<h3> Trigger in Event </h3>
+	In the jQuery the event handlers bound to an element can be trigger without user interaction. The users can use the <strong class="thick">.trigger()</strong> method. <br />
+	Here is how it works: <br />
+	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/m6b5ffaj/1/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+	There is another method also can do the trigger function. it calls .triggerHandler() method.
+	Here is how triggerHandler() method works:
+	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/dcxec4p3/1/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+	However, by these two examples, we can see these two methods are <strong class="thick">different</strong>. <br>
+	<li> triggerHandler() method can not trigger the default behavior of the event!</li>
+	For these two examples, triggerHandler() method can not select the text, which the text is not marked.
+	
+</p>
 	<h3>Conclusion</h3>
 	This is the end of the Events in the DOM section. In this section, we introduced a lot of methods to register the event handler. The Common jQuery Event Methods help users to execute functions easier. We also mention the event delegation and event bubbling. If you want to stop event bubbling, you can use stopPropagation() method. Moreover, if you want to stop the default action, the users can use the preventDefault() method. We also can use jQuery to add event listeners to a parent element! For further inquiry into the Event methods, visit <%= link_to('More information about Events', "https://learn.jquery.com/events/") %>.
 </p>
