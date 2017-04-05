@@ -39,3 +39,5 @@
   * Linked to in part5
 * https://learn.jquery.com/ajax/jquery-ajax-methods/#convenience-methods
   * referenced in part5
+* https://www.w3schools.com/jquery/jquery_ref_effects.asp
+  * referenced in part 4
