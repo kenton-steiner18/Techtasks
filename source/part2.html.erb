@@ -6,11 +6,11 @@
 
 
 
-  <p>JQuery comes with many useful methods for modifying the DOM. It offers many DOM related methods that allow users to access and modify the elements and attributes easily. </p>
+  <p>The jQuery library stores an extensive amount methods for modifying the DOM to make accessing and modifying the elements and things like their attributes relatively simple.</p>
 
   <h3>Get and Set Content Methods: text(),html(),val() and attr()</h3>
 
-  <p>The four JQuery methods for modifying the DOM are:</p>
+  <p>Four common jQuery methods for modifying the DOM are:</p>
 
   <ul class = "withBullets">
     <li><strong>text()</strong>: Sets or returns the text content of selected elements</li>
@@ -21,61 +21,84 @@
 
   <p>Here are some examples of how to get content with the jQuery text() and html() methods:</p>
 
-  <div class="code">&lt;p id="test"&gt;This is some &lt;b&gt;example&lt;/b&gt; on JQuery method.&lt;/p&gt;
-
-  alert($("#test").text());
-  alert($("#test").html());</div>
+  <div class="code">
+    HTML:<br>
+    &lt;p id="test"&gt;This is some &lt;b&gt;example&lt;/b&gt; on jQuery method.&lt;/p&gt;<br>
+    jQuery:<br>
+    alert($("#test").text());<br>
+    alert($("#test").html());
+  </div>
 
   <p>The window alert will show the following:</p>
 
-  <div class="code">This is some example on JQuery method.
-    This is some &lt;b&gt;example&lt;/b&gt; on JQuery method.</div>
+  <div class="code">
+    This is some example on jQuery method.<br>
+    This is some &lt;b&gt;example&lt;/b&gt; on jQuery method.
+  </div>
 
   <p>Here is an example of how to get the value of input field with val() method:</p>
 
-  <div class="code">&lt;p&gt;Name: &lt;input type="text" id="test" value="Tony Su"&gt;&lt;/p&gt;
-  alert($("#test").val());</div>
+  <div class="code">
+    HTML:<br>
+    &lt;p&gt;Name: &lt;input type="text" id="test" value="Tony Su"&gt;&lt;/p&gt;<br>
+    jQuery:<br>    
+    alert($("#test").val());
+  </div>
 
   <p>The window alert will show <span class="code">Tony Su</span>.<br>
     Here are some examples of how to set content with text(), html() and val():</p>
 
-  <div class="code">&lt;p id="test1"&gt;This is a example.&lt;/p&gt;
-&lt;p id="test2"&gt;This is another example.&lt;/p&gt;
-&lt;p&gt;Input field: &lt;input type="text" id="test3" value="Tony Su"&gt;&lt;/p&gt;
+  <div class="code">
+    HTML:<br>
+    &lt;p id="test1"&gt;This is a example.&lt;/p&gt;<br>
+    &lt;p id="test2"&gt;This is another example.&lt;/p&gt;<br>
+    &lt;p&gt;Input field: &lt;input type="text" id="test3" value="Tony Su"&gt;&lt;/p&gt;<br>
+    jQuery:<br>
+    $("#test1").text("Hello world!");<br>
+    $("#test2").html("&lt;b&gt;Hello world!&lt;/b&gt;");<br>
+    $("#test3").val("Sunny Patel");<br>
+  </div>
 
-$("#test1").text("Hello world!");
-$("#test2").html("&lt;b&gt;Hello world!&lt;/b&gt;");
-$("#test3").val("Sunny Patel");</div>
+  <p>After the execution of the methods, here is the resulting HTML:</p>
 
-  <p>After the execution of the methods, here is the result:</p>
-
-  <div class="code">&lt;p id="test1"&gt;Hello world!&lt;/p&gt;
-&lt;p id="test2"&gt;&lt;b&gt;Hello world!&lt;/b&gt;&lt;/p&gt;
-&lt;p&gt;Input field: &lt;input type="text" id="test3" value="Sunny Patel"&gt;&lt;/p&gt;</div>
+  <div class="code">
+    &lt;p id="test1"&gt;Hello world!&lt;/p&gt;<br>
+    &lt;p id="test2"&gt;&lt;b&gt;Hello world!&lt;/b&gt;&lt;/p&gt;<br>
+    &lt;p&gt;Input field: &lt;input type="text" id="test3" value="Sunny Patel"&gt;&lt;/p&gt;<br>
+  </div>
 
   <p>Here is an example of how to get the value of the href attribute in a link:</p>
 
-  <div class="code">&lt;p&gt;&lt;a href="https://www.youtube.com" id="yt"&gt;Youtube&lt;/a&gt;&lt;/p&gt;
-alert($("#yt").attr());</div>
+  <div class="code">
+  HTML:<br>
+  &lt;p&gt;&lt;a href="https://www.youtube.com" id="yt"&gt;Youtube&lt;/a&gt;&lt;/p&gt;<br>
+  jQuery:<br>
+  alert($("#yt").attr());
+  </div>
 
   <p>The window alert will show <span class="code">https://www.youtube.com</span>.</p>
 
   <p>Here is an example of how to get the value of the href attribute in a link:</p>
 
-  <div class="code">&lt;p&gt;&lt;a href="https://www.google.com" id="yt"&gt;Youtube&lt;/a&gt;&lt;/p&gt;<br>
-$("#yt").attr("href", "https://www.youtube.com");</div>
+  <div class="code">
+    HTML:<br>
+    &lt;p&gt;&lt;a href="https://www.google.com" id="yt"&gt;Youtube&lt;/a&gt;&lt;/p&gt;<br>
+    jQuery:<br>
+    $("#yt").attr("href", "https://www.youtube.com");
+  </div>
 
-  <p>This will change the value of hrenf attribute to <span class="code">www.youtube.com</span>.<br>
-    You can also set multiple value of attributes at the same time:</p>
+  <p>This method allows you to change the value of href attribute to <span class="code">https://www.youtube.com</span>.<br>
+  You can also set multiple value of attributes at the same time:</p>
 
   <div class="code">$("#yt").attr({
             "href" : "https://www.youtube.com",
             "id" : "youtube"
-        });</div>
+        });
+  </div>
 
   <h3 >Add New Content: append(), prepend(),after() and before()</h3>
 
-  <p>These four JQuery methods are used to add new content:  </p>
+  <p>These four jQuery methods are used to add new content:  </p>
 
   <ul class = "withBullets">
     <li><strong>append()</strong> - Inserts content <strong>at the end of</strong> the selected elements<br></li>
@@ -86,71 +109,89 @@ $("#yt").attr("href", "https://www.youtube.com");</div>
 
   <p>Here is an example of <strong>append()</strong> and <strong>prepend()</strong>:</p>
 
-  <div class="code">&lt;p&gt;This is an example.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;example 1&lt;/li&gt;
-  &lt;li&gt;example 2&lt;/li&gt;
-  &lt;li&gt;example 3&lt;/li&gt;
-&lt;/ol&gt;
-$("p").append(" &lt;b&gt;Another Example&lt;/b&gt;");
-$("ol").prepend("&lt;li&gt;Tony Su&lt;/li&gt;");</div>
+  <div class="code">
+    HTML:<br>
+    &lt;p&gt;This is an example.&lt;/p&gt;<br>
+    &lt;ol&gt;<br>
+    &lt;li&gt;example 1&lt;/li&gt;<br>
+    &lt;li&gt;example 2&lt;/li&gt;<br>
+    &lt;li&gt;example 3&lt;/li&gt;<br>
+    &lt;/ol&gt;<br>
+    jQuery:<br>
+    $("p").append(" &lt;b&gt;Another Example&lt;/b&gt;");<br>
+    $("ol").prepend("&lt;li&gt;Tony Su&lt;/li&gt;");<br>
+    </div>
 
   <p>Here is the result:</p>
 
-  <div class="code">&lt;p&gt;This is an example.&lt;b&gt;Another Example&lt;/b&gt;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Tony Su&lt;/li&gt;
-  &lt;li&gt;example 1&lt;/li&gt;
-  &lt;li&gt;example 2&lt;/li&gt;
-  &lt;li&gt;example 3&lt;/li&gt;
-&lt;/ol&gt;</div>
+  <div class="code">
+    &lt;p&gt;This is an example.&lt;b&gt<br>
+    Another Example&lt;/b&gt;&lt;/p&gt;<br>
+    &lt;ol&gt;<br>
+    &lt;li&gt;Tony Su&lt;/li&gt;<br>
+    &lt;li&gt;example 1&lt;/li&gt;<br>
+    &lt;li&gt;example 2&lt;/li&gt;<br>
+    &lt;li&gt;example 3&lt;/li&gt;<br>
+    &lt;/ol&gt;
+  </div>
 
-  <p>You can add unlimited amounts of new element at the same time with <strong>append()</strong> and <strong>prepand()</strong>. Both methods can take an infinite amount of paramenters, like this:</p>
+  <p>You can add an indefinite amount of new elements at the same time with <strong>append()</strong> and <strong>prepand()</strong>. Both methods can take an indefinite amount of paramenters, like this:</p>
 
-  <div class="code">$("ol").append("&lt;li&gt;example1&lt;/li&gt;", "&lt;li&gt;example&lt;/li&gt;", "&lt;li&gt;example&lt;/li&gt;");</div>
+  <div class="code">
+    $("ol").append("&lt;li&gt;example1&lt;/li&gt;", "&lt;li&gt;example&lt;/li&gt;", "&lt;li&gt;example&lt;/li&gt;");</div>
 
   <p>Here are some examples of <strong>after()</strong> and <strong>before()</strong>. Be careful with the differences between <strong>append()</strong> and <strong>prepend()</strong>. </p>
 
-  <div class="code">&lt;p&gt;This is a example.&lt;/p&gt;
-$("p").after("&lt;b&gt;Before&lt;/b&gt;");
-$("p").before("&lt;i&gt;After&lt;/i&gt;"); </div>
+  <div class="code">
+    HTML:<br>
+    &lt;p&gt;This is a example.&lt;/p&gt;<br>
+    jQuery:<br>
+    $("p").after("&lt;b&gt;Before&lt;/b&gt;");<br>
+    $("p").before("&lt;i&gt;After&lt;/i&gt;"); </div>
 
   <p>Here is the result:</p>
 
   <div class="code">&lt;b&gt;Before&lt;/b&gt;&lt;p&gt;This is a example.&lt;/p&gt;&lt;i&gt;After&lt;/i&gt;</div>
 
-  <p>Just like <strong>append()</strong> and <strong>prepend()</strong>, you can add unlimited amount of new elements at the same time. </p>
+  <p>Just like <strong>append()</strong> and <strong>prepend()</strong>, you can add indefinite amount of new elements at the same time. </p>
 
   <div class="code">$("p").after("&lt;b&gt;example1&lt;/b&gt;","&lt;b&gt;example2&lt;/b&gt;","&lt;b&gt;example3&lt;/b&gt;");</div>
 
   <h3>Remove Content: remove() and empty()</h3>
 
-  <p>Here are two JQuery methods to remove content:  </p>
+  <p>Here are two jQuery methods to remove content:  </p>
 
-  <ul>
+  <ul class = "withBullets">
     <li><strong>remove()</strong> - Removes the selected element and its child elements</li>
     <li><strong>empty()</strong> - Removes the child elements from the selected element</li>
   </ul>
 
   <p>Here is an example of <strong>remove()</strong>:</p>
 
-  <div class="code">&lt;div&gt;This is the parent element.
-&lt;p&gt;This is a child element in the div.&lt;/p&gt;
-&lt;p&gt;This is another child element in the div.&lt;/p&gt;
-&lt;/div&gt;
-$("div").remove();</div>
+  <div class="code">
+  HTML:<br>
+  &lt;div&gt;This is the parent element.<br>
+  &lt;p&gt;This is a child element in the div.&lt;/p&gt;<br>
+  &lt;p&gt;This is another child element in the div.&lt;/p&gt;<br>
+  &lt;/div&gt;<br>
+  jQuery:<br>
+  $("div").remove(); <span class="comment">// Resulting in an empty document</span>
+</div>
 
   <p>Here is an example of <strong>empty()</strong>:</p>
 
-  <div class="code">&lt;div&gt;This is the parent element.
-&lt;p&gt;This is a child element in the div.&lt;/p&gt;
-&lt;p&gt;This is another child element in the div.&lt;/p&gt;
-&lt;/div&gt;
-$("div").empty();</div>
+  <div class="code">
+    &lt;div&gt;This is the parent element.<br>
+    &lt;p&gt;This is a child element in the div.&lt;/p&gt;<br>
+    &lt;p&gt;This is another child element in the div.&lt;/p&gt;<br>
+    &lt;/div&gt;<br>
+    jQuery:<br>
+    $("div").empty();
+  </div>
 
-  <p>Note: the first example will remove everything including <span class="code">&lt;div&gt;</span>. However, the second example will only remove <span class="code">&lt;p&gt;</span>. Make sure to exercise caution when using these methods, as the naming convention can be a bit confusing. </p>
+  <p>Note: the first example will remove everything including <span class="code">&lt;div&gt;</span>. However, the second example will not remove the <span class="code">&ltdiv&gt</span>, but will remove <span class="code">&lt;p&gt;</span> and the text following the <span class="code">&lt;div&gt;</span> tag. Make sure to exercise caution when using these methods, as the naming convention can be a bit confusing. </p>
 
-  <p>The <strong>remove()</strong> method can also be used as a filter. You can put any selector syntax as the paramenters for <strong>remove()</strong> and <strong>remove()</strong> will remove any elemnents chose by the selector. </p>
+  <p>The <strong>remove()</strong> method can also be used as a filter. You can put any selector syntax as the paramenters for <strong>remove()</strong> and <strong>remove()</strong> will remove any elemnents chosen by the selector. </p>
 
   <p>Here is an example:</p>
 
@@ -160,17 +201,20 @@ $("div").empty();</div>
 
   <h3>Get and Set the CSS: css()</h3>
 
-  <p>JQuery provides <strong>css()</strong> to set and return the specificed CSS property of selected elements.<br>
+  <p>Note: It is recommended to run the examples in this section in <a href="https://jsfiddle.net/">jsFiddle</a><br>jQuery provides <strong>css()</strong> to set and return the specificed CSS property of selected elements.<br>
     The following syntax is used to return CSS properties:<br>
     <span class="code">
       css("propertyname");
     </span><br>
     Here is an example:</p>
 
-  <div class="code">&lt;p style="background-color:#ff0000"&gt;This is a exmaple.&lt;/p&gt;
-$("p").css("background-color");</div>
+  <div class="code">
+    HTML:<br>
+    &lt;p style="background-color:#ff0000"&gt;This is a example.&lt;/p&gt;<br>
+    jQuery:<br>
+    $("p").css("background-color");</div>
 
-  <p>It will return <span class="code">(255,0,0)</span>.</p>
+  <p>This will return <span class="code">(255,0,0)</span>.</p>
 
   <p>To set the CSS properties of selected elements, use the following syntax:<br>
     <span class="code">
@@ -178,12 +222,15 @@ $("p").css("background-color");</div>
     </span>
     Here is a example:</p>
 
-  <div class="code">&lt;p style="background-color:#ff0000"&gt;This is a exmaple.&lt;/p&gt;
-$("p").css("background-color", "yellow");</div>
+  <div class="code">
+    HTML:<br>
+    &lt;p style="background-color:#ff0000"&gt;This is a example.&lt;/p&gt;<br>
+    jQuery:<br>
+    $("p").css("background-color", "yellow");</div>
 
-  <p>It will set the background color of all <span class="code">&lt;p&gt;</span>to yellow. </p>
+  <p>This will set the background color of all <span class="code">&lt;p&gt;</span>to yellow. </p>
 
   <h3>Depths of Writing</h3>
-  <p>I write in six levels of depth of knowledge. I showed the knowledge by defining the methods that modify DOM. I showed comprehension by descriping the methods in my own words.  I also showed the application by giving the examples on how to use those methods. I showed analysis by highlighting the differences between some similar methods. I showed synthesis and evaluation by fixing some error I made eariler. </p>
+  <p>I wrote in 5 levels of depth of knowledge. I showed knowledge by defining the methods that modify DOM. I showed comprehension by describing the methods in my own words.  I also showed application by demonstrating useful applications of the methods. I showed analysis by summarizing some of the examples. Finally, I showed synthesis by constructing these examples. I however couldn't show evaluation because I couldn't find a topic where I needed to show what was most optimal/rank.  </p>
   </body>
 </div>
