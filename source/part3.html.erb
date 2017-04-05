@@ -85,38 +85,37 @@ Events in the DOM<br>
 
 	Press Ctrl + Shift + J (Windows / Linux) or Cmd + Opt + J (Mac), then we can see the result of console.
 
-	If we click One only 1 time, Three 3 times, Four 2 times and Five 4 times, what result can we get? <br/>
+	If we click One only 1 time, Three 3 times, Four 2 times and Five 4 times, what result do we get? <br/>
 	<blockquote class="imgur-embed-pub" lang="en" data-id="a/U3sYy"><a href="//imgur.com/U3sYy"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script> <br/>
 
-	In the Console, it will count how many times the user has clicked. However, if we add one element to parent element. What will happen?
+	In the Console, it will count how many times the user has clicked. However, if we add one element to the parent element, what will happen?
 	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/6voLus3t/2/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-	Now we <strong class="thick">add</strong> one element to list. The result is that when we click the Six, nothing will happen. In the Console, it will not count the new element. The reason is that the event handler was registered when calling the on() method. The new element did not exist at that time. Hence, the new element does not register an event handler. <br />
-	Sometimes, users might meet this problem: if there is two elements have the same id, how to locate the specified one? Let's see the direct method first:
+	Now we <strong class="thick">add</strong> one element to list. The result is that when we click the Six, nothing will happen; the console will not count the new element. This is because the event handler was registered when calling the on() method and the new element did not exist at that time. Hence, the new element does not register an event handler. <br />
+	Sometimes, users might run into the problem of two elements having the same id.  How do you locate the correct, specified element? First, try to use the direct method:
 	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/at5qgync/3/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-	We can see the direct method can not locate the inner one. How to solve this problem? The Event Delegation can help us to fix it. <br />
-	The Event Delegation can attach the event handler for the specified elements inside the parents element. Before the jQuery version 3.0., Users used the delegate() method, now use the on() method instead. Here is the delegated method.
+	We can see the direct method can not locate the inner element, but Event delegation can help us to solve this problem. <br />
+	Event delegation can attach the event handler for the specified elements inside the parents element. Before jQuery version 3.0., this was done with the delegate() method, but now the on() method is used instead. <br>Below is the delegated method.
 	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/w1b9f6g7/4/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 	
 </p>
 
 <p>
-<h3> Trigger in Event </h3>
-	In the jQuery, the event handlers bound to an element can be trigger without user interaction. The users can use the <strong class="thick">.trigger()</strong> method. <br />
+<h3> Triggering an Event </h3>
+	In jQuery, the event handlers bound to an element can be triggered without user interaction. This is accomplished by using the <strong class="thick">.trigger()</strong> method. <br />
 	Here is how it works: <br />
 	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/m6b5ffaj/1/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-	There is another method also can do the trigger function. it calls .triggerHandler() method.
+	The other method that can be used is the .triggerHandler() method.<br>
 	Here is how triggerHandler() method works:
 	<iframe width="100%" height="300" src="//jsfiddle.net/Raphael2339/dcxec4p3/1/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-	However, by these two examples, we can see these two methods are <strong class="thick">different</strong>. <br />
-	The triggerHandler() method can not select the text, which the text is not marked. However, the trigger() can do that. <br />
-	Therefore, comapre to trigger() method: <br />
-	<li> triggerHandler() method can not trigger the default behavior of the event!</li>
+	Through these two examples, we can see these two methods are <strong class="thick">different</strong>. <br />
+	The triggerHandler() method can not select the marked text, while trigger() can. <br />
+	Therefore, comapred to trigger(), triggerHandler() can not trigger the default behavior of the event!</li>
 	
 </p>
 	<h3>Conclusion</h3>
-	This is the end of the Events in the DOM section. In this section, we introduced a lot of methods to register the event handler. The Common jQuery Event Methods help users to execute functions easier. We also mention the event delegation and event bubbling. If you want to stop event bubbling, you can use stopPropagation() method. Moreover, if you want to stop the default action, the users can use the preventDefault() method. We also can use Event Delegation to attach the event handler for the specified elements! For further inquiry into the Event methods, visit <%= link_to('More information about Events', "https://learn.jquery.com/events/") %>.
+	This is the end of the Events in the DOM section. In this section, we introduced a lot of methods to register event handlers. The common jQuery Event Methods help users execute functions easier. We also mentioned event delegation and event bubbling. If you want to stop event bubbling, you can use stopPropagation() and to stop the default action, you can use preventDefault(). We also can use Event delegation to attach event handlers for the specified elements! For further inquiry into the Event methods, visit <%= link_to('More information about Events', "https://learn.jquery.com/events/") %>.
 </p>
 
 <p>

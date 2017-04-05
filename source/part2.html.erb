@@ -1,9 +1,10 @@
 <div>
   <body>
 
-  <h2>Modifying the DOM</h2>
+  <h2>Modifying the DOM<br>
+  <span class="author">Authored by Tony Su</h2>
 
-  <h4>Authored By Tony Su</h4>
+
 
   <p>JQuery comes with many useful methods for modifying the DOM. It offers many DOM related methods that allow users to access and modify the elements and attributes easily. </p>
 
@@ -20,56 +21,56 @@
 
   <p>Here are some examples of how to get content with the jQuery text() and html() methods:</p>
 
-  <div class="code">&lt;p id=&quot;test&quot;&gt;This is some &lt;b&gt;example&lt;/b&gt; on JQuery method.&lt;/p&gt;
+  <div class="code">&lt;p id="test"&gt;This is some &lt;b&gt;example&lt;/b&gt; on JQuery method.&lt;/p&gt;
 
-  alert($(&quot;#test&quot;).text());
-  alert($(&quot;#test&quot;).html());</div>
+  alert($("#test").text());
+  alert($("#test").html());</div>
 
   <p>The window alert will show the following:</p>
 
   <div class="code">This is some example on JQuery method.
     This is some &lt;b&gt;example&lt;/b&gt; on JQuery method.</div>
 
-  <p>Here is a example of how to get the value of input field with val() method:</p>
+  <p>Here is an example of how to get the value of input field with val() method:</p>
 
-  <div class="code">&lt;p&gt;Name: &lt;input type=&quot;text&quot; id=&quot;test&quot; value=&quot;Tony Su&quot;&gt;&lt;/p&gt;
-  alert($(&quot;#test&quot;).val());</div>
+  <div class="code">&lt;p&gt;Name: &lt;input type="text" id="test" value="Tony Su"&gt;&lt;/p&gt;
+  alert($("#test").val());</div>
 
-  <p>The window alert will show <span class="code">Tony Su</span>.
-    Here are some example of how to set content with text(), html() and val():</p>
+  <p>The window alert will show <span class="code">Tony Su</span>.<br>
+    Here are some examples of how to set content with text(), html() and val():</p>
 
-  <div class="code">&lt;p id=&quot;test1&quot;&gt;This is a example.&lt;/p&gt;
-&lt;p id=&quot;test2&quot;&gt;This is another exanoke.&lt;/p&gt;
-&lt;p&gt;Input field: &lt;input type=&quot;text&quot; id=&quot;test3&quot; value=&quot;Tony Su&quot;&gt;&lt;/p&gt;
+  <div class="code">&lt;p id="test1"&gt;This is a example.&lt;/p&gt;
+&lt;p id="test2"&gt;This is another example.&lt;/p&gt;
+&lt;p&gt;Input field: &lt;input type="text" id="test3" value="Tony Su"&gt;&lt;/p&gt;
 
-$(&quot;#test1&quot;).text(&quot;Hello world!&quot;);
-$(&quot;#test2&quot;).html(&quot;&lt;b&gt;Hello world!&lt;/b&gt;&quot;);
-$(&quot;#test3&quot;).val(&quot;Sunny Patel&quot;);</div>
+$("#test1").text("Hello world!");
+$("#test2").html("&lt;b&gt;Hello world!&lt;/b&gt;");
+$("#test3").val("Sunny Patel");</div>
 
   <p>After the execution of the methods, here is the result:</p>
 
-  <div class="code">&lt;p id=&quot;test1&quot;&gt;Hello world!&lt;/p&gt;
-&lt;p id=&quot;test2&quot;&gt;&lt;b&gt;Hello world!&lt;/b&gt;&lt;/p&gt;
-&lt;p&gt;Input field: &lt;input type=&quot;text&quot; id=&quot;test3&quot; value=&quot;Sunny Patel&quot;&gt;&lt;/p&gt;</div>
+  <div class="code">&lt;p id="test1"&gt;Hello world!&lt;/p&gt;
+&lt;p id="test2"&gt;&lt;b&gt;Hello world!&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Input field: &lt;input type="text" id="test3" value="Sunny Patel"&gt;&lt;/p&gt;</div>
 
-  <p>Here is a example of how to get the value of the href attribute in a link:</p>
+  <p>Here is an example of how to get the value of the href attribute in a link:</p>
 
-  <div class="code">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com&quot; id=&quot;yt&quot;&gt;Youtube&lt;/a&gt;&lt;/p&gt;
-alert($(&quot;#yt&quot;).attr());</div>
+  <div class="code">&lt;p&gt;&lt;a href="https://www.youtube.com" id="yt"&gt;Youtube&lt;/a&gt;&lt;/p&gt;
+alert($("#yt").attr());</div>
 
   <p>The window alert will show <span class="code">https://www.youtube.com</span>.</p>
 
-  <p>Here is a example of how to get the value of the href attribute in a link:</p>
+  <p>Here is an example of how to get the value of the href attribute in a link:</p>
 
-  <div class="code">&lt;p&gt;&lt;a href=&quot;https://www.google.com&quot; id=&quot;yt&quot;&gt;Youtube&lt;/a&gt;&lt;/p&gt;
-$(&quot;#yt&quot;).attr(&quot;href&quot;, &quot;https://www.youtube.com&quot;);</div>
+  <div class="code">&lt;p&gt;&lt;a href="https://www.google.com" id="yt"&gt;Youtube&lt;/a&gt;&lt;/p&gt;<br>
+$("#yt").attr("href", "https://www.youtube.com");</div>
 
-  <p>This will change the value of herf attribute to <span class="code">www.youtube.com</span>.<br>
-    You can also set multiply value of attributes at the same time:</p>
+  <p>This will change the value of hrenf attribute to <span class="code">www.youtube.com</span>.<br>
+    You can also set multiple value of attributes at the same time:</p>
 
-  <div class="code">$(&quot;#yt&quot;).attr({
-            &quot;href&quot; : &quot;https://www.youtube.com&quot;,
-            &quot;id&quot; : &quot;youtube&quot;
+  <div class="code">$("#yt").attr({
+            "href" : "https://www.youtube.com",
+            "id" : "youtube"
         });</div>
 
   <h3 >Add New Content: append(), prepend(),after() and before()</h3>
@@ -83,20 +84,20 @@ $(&quot;#yt&quot;).attr(&quot;href&quot;, &quot;https://www.youtube.com&quot;);<
     <li><strong>before()</strong> - Inserts content <strong>before</strong> the selected elements</li>
   </ul>
 
-  <p>Here is a example of <strong>append()</strong> and <strong>prepend()</strong>:</p>
+  <p>Here is an example of <strong>append()</strong> and <strong>prepend()</strong>:</p>
 
-  <div class="code">&lt;p&gt;This is a example.&lt;/p&gt;
+  <div class="code">&lt;p&gt;This is an example.&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;example 1&lt;/li&gt;
   &lt;li&gt;example 2&lt;/li&gt;
   &lt;li&gt;example 3&lt;/li&gt;
 &lt;/ol&gt;
-$(&quot;p&quot;).append(&quot; &lt;b&gt;Another Example&lt;/b&gt;&quot;);
-$(&quot;ol&quot;).prepend(&quot;&lt;li&gt;Tony Su&lt;/li&gt;&quot;);</div>
+$("p").append(" &lt;b&gt;Another Example&lt;/b&gt;");
+$("ol").prepend("&lt;li&gt;Tony Su&lt;/li&gt;");</div>
 
   <p>Here is the result:</p>
 
-  <div class="code">&lt;p&gt;This is a example.&lt;b&gt;Another Example&lt;/b&gt;&lt;/p&gt;
+  <div class="code">&lt;p&gt;This is an example.&lt;b&gt;Another Example&lt;/b&gt;&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Tony Su&lt;/li&gt;
   &lt;li&gt;example 1&lt;/li&gt;
@@ -104,15 +105,15 @@ $(&quot;ol&quot;).prepend(&quot;&lt;li&gt;Tony Su&lt;/li&gt;&quot;);</div>
   &lt;li&gt;example 3&lt;/li&gt;
 &lt;/ol&gt;</div>
 
-  <p>You can add unlimited amount of new element at the same time with <strong>append()</strong> and <strong>prepand()</strong>. Both methods can take infinite amount of paramenters, like this:</p>
+  <p>You can add unlimited amounts of new element at the same time with <strong>append()</strong> and <strong>prepand()</strong>. Both methods can take an infinite amount of paramenters, like this:</p>
 
-  <div class="code">$(&quot;ol&quot;).append(&quot;&lt;li&gt;example1&lt;/li&gt;&quot;, &quot;&lt;li&gt;example&lt;/li&gt;&quot;, &quot;&lt;li&gt;example&lt;/li&gt;&quot;);</div>
+  <div class="code">$("ol").append("&lt;li&gt;example1&lt;/li&gt;", "&lt;li&gt;example&lt;/li&gt;", "&lt;li&gt;example&lt;/li&gt;");</div>
 
-  <p>Here are some examples of <strong>after()</strong> and <strong>before()</strong>. Be careful about the differences with <strong>append()</strong> and <strong>prepend()</strong>. </p>
+  <p>Here are some examples of <strong>after()</strong> and <strong>before()</strong>. Be careful with the differences between <strong>append()</strong> and <strong>prepend()</strong>. </p>
 
   <div class="code">&lt;p&gt;This is a example.&lt;/p&gt;
-$(&quot;p&quot;).after(&quot;&lt;b&gt;Before&lt;/b&gt;&quot;);
-$(&quot;p&quot;).before(&quot;&lt;i&gt;After&lt;/i&gt;&quot;); </div>
+$("p").after("&lt;b&gt;Before&lt;/b&gt;");
+$("p").before("&lt;i&gt;After&lt;/i&gt;"); </div>
 
   <p>Here is the result:</p>
 
@@ -120,7 +121,7 @@ $(&quot;p&quot;).before(&quot;&lt;i&gt;After&lt;/i&gt;&quot;); </div>
 
   <p>Just like <strong>append()</strong> and <strong>prepend()</strong>, you can add unlimited amount of new elements at the same time. </p>
 
-  <div class="code">$(&quot;p&quot;).after(&quot;&lt;b&gt;example1&lt;/b&gt;&quot;,&quot;&lt;b&gt;example2&lt;/b&gt;&quot;,&quot;&lt;b&gt;example3&lt;/b&gt;&quot;);</div>
+  <div class="code">$("p").after("&lt;b&gt;example1&lt;/b&gt;","&lt;b&gt;example2&lt;/b&gt;","&lt;b&gt;example3&lt;/b&gt;");</div>
 
   <h3>Remove Content: remove() and empty()</h3>
 
@@ -131,54 +132,54 @@ $(&quot;p&quot;).before(&quot;&lt;i&gt;After&lt;/i&gt;&quot;); </div>
     <li><strong>empty()</strong> - Removes the child elements from the selected element</li>
   </ul>
 
-  <p>Here is a examples of <strong>remove()</strong>:</p>
+  <p>Here is an example of <strong>remove()</strong>:</p>
 
   <div class="code">&lt;div&gt;This is the parent element.
 &lt;p&gt;This is a child element in the div.&lt;/p&gt;
 &lt;p&gt;This is another child element in the div.&lt;/p&gt;
 &lt;/div&gt;
-$(&quot;div&quot;).remove();</div>
+$("div").remove();</div>
 
-  <p>Here is a example of <strong>empty()</strong>:</p>
+  <p>Here is an example of <strong>empty()</strong>:</p>
 
   <div class="code">&lt;div&gt;This is the parent element.
 &lt;p&gt;This is a child element in the div.&lt;/p&gt;
 &lt;p&gt;This is another child element in the div.&lt;/p&gt;
 &lt;/div&gt;
-$(&quot;div&quot;).empty();</div>
+$("div").empty();</div>
 
-  <p>Noting that the first example will remove everything including <span class="code">&lt;div&gt;</span>. However, the second example will only remove <span class="code">&lt;p&gt;</span>. Honestly, it is a pretty bad naming practise. </p>
+  <p>Note: the first example will remove everything including <span class="code">&lt;div&gt;</span>. However, the second example will only remove <span class="code">&lt;p&gt;</span>. Make sure to exercise caution when using these methods, as the naming convention can be a bit confusing. </p>
 
   <p>The <strong>remove()</strong> method can also be used as a filter. You can put any selector syntax as the paramenters for <strong>remove()</strong> and <strong>remove()</strong> will remove any elemnents chose by the selector. </p>
 
-  <p>Here is a example:</p>
+  <p>Here is an example:</p>
 
-  <div class="code">$(&quot;p&quot;).remove(&quot;.test&quot;);</div>
+  <div class="code">$("p").remove(".test");</div>
 
-  <p>his example removes all <span class="code">&lt;p&gt;</span> elements with <span class="code">class=&quot;test&quot;</span>.</p>
+  <p>This example removes all <span class="code">&lt;p&gt;</span> elements with <span class="code">class="test"</span>.</p>
 
   <h3>Get and Set the CSS: css()</h3>
 
   <p>JQuery provides <strong>css()</strong> to set and return the specificed CSS property of selected elements.<br>
-    The following syntax is used to return CSS property:<br>
+    The following syntax is used to return CSS properties:<br>
     <span class="code">
-      css(&quot;propertyname&quot;);
+      css("propertyname");
     </span><br>
-    Here is a example:</p>
+    Here is an example:</p>
 
-  <div class="code">&lt;p style=&quot;background-color:#ff0000&quot;&gt;This is a exmaple.&lt;/p&gt;
-$(&quot;p&quot;).css(&quot;background-color&quot;);</div>
+  <div class="code">&lt;p style="background-color:#ff0000"&gt;This is a exmaple.&lt;/p&gt;
+$("p").css("background-color");</div>
 
   <p>It will return <span class="code">(255,0,0)</span>.</p>
 
-  <p>To set the CSS property of selected elements, use the following syntax:<br>
+  <p>To set the CSS properties of selected elements, use the following syntax:<br>
     <span class="code">
-      css(&quot;propertyname&quot;,&quot;value&quot;);
+      css("propertyname","value");
     </span>
     Here is a example:</p>
 
-  <div class="code">&lt;p style=&quot;background-color:#ff0000&quot;&gt;This is a exmaple.&lt;/p&gt;
-$(&quot;p&quot;).css(&quot;background-color&quot;, &quot;yellow&quot;);</div>
+  <div class="code">&lt;p style="background-color:#ff0000"&gt;This is a exmaple.&lt;/p&gt;
+$("p").css("background-color", "yellow");</div>
 
   <p>It will set the background color of all <span class="code">&lt;p&gt;</span>to yellow. </p>
 
