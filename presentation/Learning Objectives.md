@@ -1,4 +1,4 @@
-##Learning Objectives
+## Learning Objectives
 
 1. Be familiar with bascie definition and background of JQuery.
 2. Be able to properly install and run JQuery
