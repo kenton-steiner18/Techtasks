@@ -1,0 +1,368 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 1cm
+\rightmargin 1cm
+\bottommargin 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+
+\size footnotesize
+jQuery Multiple Choice Questions
+\end_layout
+
+\begin_layout Enumerate
+
+\size footnotesize
+Which of the following is a way to add jQuery to your projects?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\size footnotesize
+Use a DNS
+\end_layout
+
+\begin_layout Enumerate
+
+\size footnotesize
+Download library from jQuery's website
+\end_layout
+
+\begin_layout Enumerate
+
+\size footnotesize
+Both of the above
+\end_layout
+
+\begin_layout Enumerate
+
+\size footnotesize
+None of the above
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size footnotesize
+Answer: b
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\size footnotesize
+Which of these methods will display the final state of the styling effects
+ 
+\series bold
+immediately
+\series default
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\size footnotesize
+.toggle()
+\end_layout
+
+\begin_layout Enumerate
+
+\size footnotesize
+.slide()
+\end_layout
+
+\begin_layout Enumerate
+
+\size footnotesize
+.finish()
+\end_layout
+
+\begin_layout Enumerate
+
+\size footnotesize
+.stop()
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size footnotesize
+Answer: c
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\size footnotesize
+What is the only required parameter for using an AJAX function in jQuery?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\size footnotesize
+data
+\end_layout
+
+\begin_layout Enumerate
+
+\size footnotesize
+url
+\end_layout
+
+\begin_layout Enumerate
+
+\size footnotesize
+type
+\end_layout
+
+\begin_layout Enumerate
+
+\size footnotesize
+callback
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size footnotesize
+Answer: b
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\size footnotesize
+Trace through the following HTML and jQuery code.
+ What will the alert window show?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\size footnotesize
+HTML: <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+jQuery: window.alert($("#test").html);
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size footnotesize
+Answer: 
+\begin_inset Quotes eld
+\end_inset
+
+This is some bold text in a paragraph.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\size footnotesize
+Which of the following features is 
+\series bold
+NOT 
+\series default
+included in jQuery?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\size footnotesize
+Modifying the DOM
+\end_layout
+
+\begin_layout Enumerate
+
+\size footnotesize
+Animation
+\end_layout
+
+\begin_layout Enumerate
+
+\size footnotesize
+Database creation
+\end_layout
+
+\begin_layout Enumerate
+
+\size footnotesize
+Support AJAX
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size footnotesize
+Answer: C
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\size footnotesize
+Trace the following code HTML and jQuery code.
+ What will the alert window show?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\size footnotesize
+HTML:
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+<p id="foo">outer</p> 
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+<div> 
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+<p id= "foo">inner</p> 
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+</div>
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+jQuery:
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+$("div").on("click","#foo",function(){ 
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+var c = $(this).html() == "inner";
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+alert("The result is " + c); 
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+}); 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size footnotesize
+Answer: 
+\begin_inset Quotes eld
+\end_inset
+
+The result is true
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
