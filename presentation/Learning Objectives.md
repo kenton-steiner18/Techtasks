@@ -1,9 +1,10 @@
 ## Learning Objectives
 
-1. Be familiar with bascie definition and background of JQuery.
-2. Be able to properly install and run JQuery
-3. Be familiar with how to maneuver DOM with JQuery
-4. Be familiar with how to modify DOM with JQuery
-5. Be able to understand the event methods in JQuery
-6. Be able to use JQuery to create simple animatations
-7. Be faimliar with AJAX and the related methods
+1. Be familiar with basic definitions
+2. Be familiar with how to install and run jQuery
+3. Learn to maneuver the DOM
+4. Learn to modify the DOM
+5. Learn jQuery event handling
+6. Learn jQuery styling
+7. Be familiar with jQuery methods relating to AJAX
+
