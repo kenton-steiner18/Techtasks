@@ -1,0 +1,11 @@
+Here are some demos of modifying DOM. They run on JSFiddle.  
+1. [Set text content of selected element](https://jsfiddle.net/esLygekg/1/)  
+2. [Return text content of selected element](https://jsfiddle.net/esLygekg/2/)  
+3. [Return html content of selected element](https://jsfiddle.net/esLygekg/3/)  
+4. [Set html content of selected element](https://jsfiddle.net/esLygekg/4/)  
+5. [Return the value of input field of selected element](https://jsfiddle.net/esLygekg/5/)  
+6. [Set the value of input field of selected element](https://jsfiddle.net/esLygekg/6/)  
+7. [Append() and Prepend()](https://jsfiddle.net/esLygekg/7/)  
+8. [Before() and After()](https://jsfiddle.net/esLygekg/8/)  
+9. [Remove()](https://jsfiddle.net/esLygekg/9/)    
+10. [Empty()](https://jsfiddle.net/esLygekg/10/)
